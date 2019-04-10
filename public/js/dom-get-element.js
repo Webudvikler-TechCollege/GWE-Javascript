@@ -13,8 +13,13 @@ myPinkElement.onclick = function() {
 
 //Sætter onclick event på myGreenElement som kalder anonym funktion
 myGreenElement.onclick = function() {
-    //Farv baggrund (body) grøn
-    document.body.style.backgroundColor = '#0F0';    
+    console.log(document.body.style.backgroundColor);
+    if(document.body.style.backgroundColor === 'green') {
+        //Farv baggrund (body) grøn
+        document.body.style.backgroundColor = 'transparent';    
+    } else {
+        document.body.style.backgroundColor = 'green';    
+    }
 };
 
 //Sætter onclick event på myResetElement som kalder anonym funktion
