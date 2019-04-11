@@ -6,3 +6,13 @@
 function setColor(color) {
     document.body.style.backgroundColor = color;    
 }
+
+/**
+ * 
+ * @param {float} myPrice 
+ */
+function getCurrency(myPrice) {
+    return myPrice * 0,7;
+}
+
+/** */
