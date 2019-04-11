@@ -7,6 +7,7 @@ let myResetElement = document.getElementById('myResetButton');
 
 //Sætter onclick event på myPinkElement som kalder anonym funktion
 myPinkElement.onclick = function() {
+    console.log(this);
     //Farv baggrund (body) lyserød
     document.body.style.backgroundColor = '#F0F';    
 };
