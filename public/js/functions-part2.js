@@ -1,3 +1,4 @@
+writeButtons(2);
 /**
  * Funktion som opretter buttons med type og click event
  * Hver knap sætter en random baggrundsfarve på dokumentets 
@@ -6,7 +7,7 @@
  */
 function writeButtons(number = 5) {
     //Gammeldaws loop med i variabel
-    for(let i = 0; i <= 5; i++) {
+    for(let i = 1; i <= number; i++) {
         //Opretter button element
         let myButton = document.createElement('button');
         //Sætter attribut type til button
@@ -17,6 +18,7 @@ function writeButtons(number = 5) {
         myButton.onclick = function() {
             //Henter random hex kode til farve
             let randColor = Math.ceil(Math.random()*16777215).toString(16);
+            console.log(randColor);
             //Sætter baggrundsfarve
             document.body.style.backgroundColor = '#' + randColor;
         }
@@ -25,13 +27,3 @@ function writeButtons(number = 5) {
     }
 }
 
-writeButtons();
-
-/**
- * Funktion til at sætte baggrundsfarve med 
- * Modtager farvenavn som parameter
- * @param {string} color 
- */
-function setColor(color) {
-    document.body.style.backgroundColor = color;    
-}
