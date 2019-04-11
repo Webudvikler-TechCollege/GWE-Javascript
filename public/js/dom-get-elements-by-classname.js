@@ -22,10 +22,13 @@ console.dir(myButtons);
  * button - sætter et click event på den enkelte button 
  * og bruger knappens data attribut til at definere dokumentets 
  * baggrundsfarve.
- * 
  */
 for(let myButton of myButtons) {
-    myButton.onclick = function() {        
+    myButton.onclick = function() {
+        // Logger elementets dataset
+        console.log(this.dataset.eksempel);  
+        // Logger værdien af et af elementets data attributter
+        console.log(this.dataset.eksempel);  
         // this refererer til den knap der klikkes på
         document.body.style.backgroundColor = this.dataset.color;
     }
