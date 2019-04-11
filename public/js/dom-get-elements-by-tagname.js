@@ -25,6 +25,7 @@ console.dir(myButtons);
  */
 for(let myButton of myButtons) {
     myButton.onclick = function() {
+        // console this viser den tilklikkede knap
         console.dir(this.id);
         // this refererer til den knap der klikkes på
         document.body.style.backgroundColor = this.id;
