@@ -1,4 +1,6 @@
-writeButtons(2);
+"use strict";
+
+//writeButtons();
 /**
  * Funktion som opretter buttons med type og click event
  * Hver knap sætter en random baggrundsfarve på dokumentets 
@@ -27,3 +29,10 @@ function writeButtons(number = 5) {
     }
 }
 
+function test(min) {
+    for(let i = 100; i > min; i--) {
+        console.log(i);
+    }
+}
+
+test(80);
