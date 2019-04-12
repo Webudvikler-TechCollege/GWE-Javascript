@@ -11,17 +11,20 @@
         <fieldset>
             <div>
                 <label for="firstname">Fornavn</label>
-                <input type="tekst" name="firstname" id="firstname" required>
+                <input type="tekst" name="firstname" id="firstname">
             </div>    
             <div>
                 <label for="lastname">Efternavn</label>
-                <input type="tekst" name="lastname" id="lastname" required>
+                <input type="tekst" name="lastname" id="lastname">
+            </div>    
+            <div>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" required>
             </div>    
             <div>
                 <button type="button" onclick="validateForm(this.form)">Send</button>
             </div>    
         </fieldset>    
-
     </form>
     
     <script src="js/form-validering-part1.js"></script>
