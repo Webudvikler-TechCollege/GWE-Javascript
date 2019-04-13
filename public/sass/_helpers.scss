@@ -1,0 +1,12 @@
+// Vendor mixin:
+@mixin vendor($prop, $val) {
+  #{$prop}: $val;
+  -ms-#{$prop}: $val;
+  -moz-#{$prop}: $val;
+  -webkit-#{$prop}: $val;
+}
+
+// Border-radius mixin:
+@mixin border-radius($val) {
+  @include vendor(border-radius, $val);
+}
