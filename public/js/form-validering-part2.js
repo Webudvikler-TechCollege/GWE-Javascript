@@ -9,7 +9,7 @@
 function validate(form_object) {
 
     //Sætter var formstatus til 1 - bruges til at angive om formen kan sendes
-    formstatus = 1;
+    has_errors = false;
 
     //Sætter var formstatus til 1 - bruges til at angive om formen kan sendes
     let confirm_message = "Bekræft at du vil sende følgende oplysninger:\n\n";
@@ -31,32 +31,41 @@ function validate(form_object) {
             //Fejlmeddelelsen bruger feltets navn som hentes fra tekst noden i feltets label (labeltext).
             //Denne string sættes til lowercase da første bogstav er stort i tekst noden
             display_error(elm, "Du skal udfylde feltet " + labeltext.toLocaleLowerCase() + "!");
-            //Sæt formstatus til false
-            formstatus = 0;
+            //Sæt haserrors til true
+            has_errors = true;
             //Bryd ud af funktionen
             return false;
 
         } else {
-
+            //Her kan vi switche indholdet af værdierne i vores data attributter (data-validate)
+            //Hvis en datasettets værdi passer til en af nedenstående cases vil input feltets 
+            //værdi blive valideret efter det givne kriterie.
+            //Validering foregår typisk ved kald af en funktion - eksempelvis onlyalpha, onlynum osv.
             switch(elm.dataset.validate) {
                 case "onlyalpha":
+                    //Tjekker om værdi kun består af bogstaver og melder fejl hvis ikke
                     if(!isValidAlpha(elm.value)) {
+                        //Kalder funktion til visning af fejl
                         display_error(elm, "Der må ikke være tal i dette felt!");
-                        form_status = 0;
+                        has_errors = true;
                         return false;
                     }
                     break;
                 case "onlynum":
+                    //Tjekker om værdi kun består af tal og melder fejl hvis ikke
                     if(!isValidNumber(elm.value)) {
+                        //Kalder funktion til visning af fejl
                         display_error(elm, "Der må kun være tal i dette felt!");
-                        form_status = 0;
+                        has_errors = true;
                         return false;
                     }
                     break;
                 case "validemail":
+                    //Tjekker om værdi er en gyldig email og melder fejl hvis ikke
                     if(!isValidEmail(elm.value)) {
+                        //Kalder funktion til visning af fejl
                         display_error(elm, "Email adressen er ikke gyldig!");
-                        form_status = 0;
+                        has_errors = true;
                         return false;
                     }
                     break;
@@ -68,7 +77,7 @@ function validate(form_object) {
     }
 
     //Formstatus er true hvis alle felter er korrekt udfyldt
-    if(formstatus) {
+    if(!has_errors) {
         //Bekræft afsendelse med confirm og confirm_message
         if(confirm(confirm_message)) {
             //Redirect til en landingpage
@@ -115,7 +124,12 @@ function display_error(input_object, error_message) {
     }
 }
 
-/* RegEx & Matching functions  */
+/**
+ * Regular Expressions functions
+ * Regular expressions kan bruges til at matche et givent mønster i en tekststreng.
+ * De er svære at læse og endnu sværere at skrive og det forventes ikke at du kan 
+ * forklare dem.
+*/
 
 //Tjekker om værdi er et nummer
 function isValidNumber(value) {
