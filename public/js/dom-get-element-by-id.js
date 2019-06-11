@@ -18,7 +18,7 @@ myPinkElement.onclick = function() {
 //Sætter onclick event på myGreenElement som kalder anonym funktion
 myGreenElement.onclick = function() {
     //Log dokumentets baggundsfarve
-    console.dir(document.body.style.backgroundColor);
+    //console.dir(document.body.style.backgroundColor);
     if(document.body.style.backgroundColor === 'green') {
         //Gør tranpsarent hvis farve er sat
         document.body.style.backgroundColor = 'transparent';    
