@@ -4,9 +4,10 @@ let button = document.getElementById('exchange');
 let resultwrapper = document.getElementById('result');
 let rate = 0;
 
-button.onclick = () => {
+button.onclick = function() {
 
     switch(currency.value) {
+        default:
         case 'euro':
             rate = 0.133893;
             break;

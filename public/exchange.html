@@ -3,21 +3,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="sass/master.css">
+    <link rel="stylesheet" href="css/exhange.css">
     <title>Exchange</title>
 </head>
 <body>
-    
-    <input type="text" id="amount" name="amount" value="100"> DKK = 
+    <div class="wrapper">
 
-    <select name="currency" id="currency">
-        <option value="euro">Euro</option>
-        <option value="us">Dollars</option>
-        <option value="rub">Rubler</option>
-    </select>
+        <input type="number" id="amount" name="amount" value="100"> DKK = 
 
-    <button id="exchange">Beregn</button>
+        <select name="currency" id="currency">
+            <option value="euro">Euro</option>
+            <option value="us">Dollars</option>
+            <option value="rub">Rubler</option>
+        </select>
 
-    <div id="result"></div>
+        <button id="exchange">Beregn</button>
+
+        <div id="result"></div>
+
+    </div>
 
     <script src="js/exchange.js"></script>
 </body>

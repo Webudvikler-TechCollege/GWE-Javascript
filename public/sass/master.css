@@ -1,68 +1,92 @@
-input[type=text], input[type=email], textarea {
+input[type=text], input[type=email], input[type=number], select, textarea {
   border-radius: 3px;
   border: solid 1px #ccc;
   padding: 6px;
-  box-shadow: inset 0px 0px 1px #ccc;
-  width: 100%; }
+  -webkit-box-shadow: inset 0px 0px 1px #ccc;
+          box-shadow: inset 0px 0px 1px #ccc;
+  width: 100%;
+}
 
 button {
   border-radius: 3px;
   border: solid 1px #ccc;
   padding: 6px;
-  box-shadow: inset 0px 0px 1px #ccc; }
+  -webkit-box-shadow: inset 0px 0px 1px #ccc;
+          box-shadow: inset 0px 0px 1px #ccc;
+}
 
 fieldset {
   border: solid 1px #666;
-  box-shadow: 0px 2px 6px 1px #ccc;
+  -webkit-box-shadow: 0px 2px 6px 1px #ccc;
+          box-shadow: 0px 2px 6px 1px #ccc;
   border-radius: 3px;
   padding: 20px;
-  width: 40%; }
+  width: 40%;
+}
 
 label {
-  width: 200px; }
+  width: 200px;
+}
 
-input[type=text].field-error, input[type=email].field-error {
-  border-color: #f0005e; }
+input[type=text].field-error, input[type=email].field-error, input[type=number].field-error, select.field-error {
+  border-color: #f0005e;
+}
 
 textarea.field-error {
-  border-color: #f0005e; }
+  border-color: #f0005e;
+}
 
 .text-error {
   font-size: 0.8rem;
-  color: #f0005e; }
+  color: #f0005e;
+}
 
 /* DROPDOWNS */
 #topnav {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   background-color: #0055aa;
   padding: 20px;
-  box-sizing: border-box;
-  overflow-y: auto; }
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow-y: auto;
+}
 
 .navbar {
   position: absolute;
   top: -9999px;
   transition: top 3s;
   -webkit-transition: top 3s;
-  /* Safari */ }
+  /* Safari */
+}
 
 .shownav {
   top: 0px !important;
-  /* position: static !important; */ }
+  /* position: static !important; */
+}
 
 .navbar {
   list-style: none;
   margin: 0px;
-  padding: 0px; }
+  padding: 0px;
+}
 
 .navbar li a {
   display: block;
   padding: 5px 10px;
   border-bottom: solid 1px #1a6ecc;
   color: #fff;
-  text-decoration: none; }
-
+  text-decoration: none;
+}
 /*# sourceMappingURL=master.css.map */

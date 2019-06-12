@@ -1,3 +1,5 @@
+@import 'variables';
+
 %input-field {
   border-radius: 3px;
   border: solid 1px #ccc;
@@ -24,7 +26,7 @@ label {
   width: 200px;
 }
 
-input[type=text], input[type=email]  {
+input[type=text], input[type=email], input[type=number], select   {
   @extend %input-field;
   &.field-error {
     border-color: $error-color;

@@ -1,4 +1,4 @@
-/**
+  /**
  * Funktion til validering af forms
  * @param {object} form 
  */
