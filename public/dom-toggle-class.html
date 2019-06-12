@@ -4,9 +4,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>DOM Toggle Class</title>
+    <style>
+        .element {
+            height: 100px;
+            width: 100px;
+            margin-bottom: 20px;
+            background-color: rgb(255, 0, 0);
+            transition: all 1s ease;
+            opacity: 0.2;
+        }
+
+        .element-active {
+            width: 100%;
+            opacity: 1;
+        }
+    </style>
 </head>
 <body>
-
+    <div id="class-element" class="element"></div>
+    <button>Toggle Class</button>
 
     <script src="js/dom-toggle-class.js"></script>
 </body>
