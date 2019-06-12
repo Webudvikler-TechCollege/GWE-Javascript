@@ -3,13 +3,15 @@
  * @param {object} form 
  */
 function validateForm(form) {
+    //console.dir(form.firstname.value);
+
     let result = true;
  
     //Hvis feltets værdi er tom...
     if(!form.firstname.value) {
         //Definer variabel med fejl meddelelse
         if(!form.firstname.nextElementSibling) {
-            let msg = '<span class="error">Du skal udfylde feltet</span>';
+            let msg = '<span class="text-error">Du skal udfylde feltet</span>';
             //Indsæt msg efter det pågældende felts sluttag
             form.firstname.insertAdjacentHTML('afterend', msg);
         }
@@ -20,12 +22,8 @@ function validateForm(form) {
 
     //Hvis feltets værdi er tom...
     if(!form.lastname.value) {
-        //Definer variabel med fejl meddelelse
-        if(!form.lastname.nextElementSibling) {
-            let msg = '<span class="error">Du skal udfylde feltet</span>';
-            //Indsæt msg efter det pågældende felts sluttag
-            form.lastname.insertAdjacentHTML('afterend', msg);
-        }
+        //Kalder alert boks med fejl besked
+        alert('Du skal udfylde feltet!');
         //Bryd ud af funktionen
         result = false;
         return false;
