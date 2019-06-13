@@ -11,6 +11,15 @@
     <button type="button" onclick="setColor('green')">Grøn</button>
     <button type="button" onclick="setColor('red')">Rød</button>
     
-    <script src="js/functions-part1.js"></script>
+    <script>
+        /**
+         * Funktion til at sætte baggrundsfarve med 
+         * Modtager farvenavn som parameter
+         * @param {string} color 
+         */
+        function setColor(color) {
+            document.body.style.backgroundColor = color;    
+        }
+    </script>
 </body>
 </html>

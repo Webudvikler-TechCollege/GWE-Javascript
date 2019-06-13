@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Funktioner - Del 1</title>
+</head>
+<body>
+    
+    <script>
+        /**
+         * Returnerer moms værdi og valuta kode af et beløb
+         * @param {number} price 
+         * @param {string} currency - default er DKK
+         */
+        function getVat(price, currency = "DKK") {
+            return Math.round(price * 0.25) + ' ' + currency;
+        }
+
+        /* Kald af funktion med et argument */
+        let vat = getVat(23499.95);
+        console.log(vat);
+
+        /* Kald af funktion med to argumenter */
+        let vat2 = getVat(995, 'EUR');       
+        console.log(vat2);
+    </script>
+</body>
+</html>
