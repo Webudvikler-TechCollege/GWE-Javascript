@@ -6,19 +6,20 @@
     <title>Dom Objekter</title>
 </head>
 <body>
-    <nav id="topnav" class="nav top-nav navigation">
-        <ul id="navbar">
-            <li><a href="">Menu 1</a></li>
-            <li><a href="">Menu 2</a></li>
-            <li><a href="">Menu 3</a></li>
-            <li><a href="">Menu 4</a></li>
-            <li><a href="">Menu 5</a></li>
-            <li><a href="">Menu 6</a></li>
-            <li><a href="">Menu 7</a></li>
-            <li><a href="">Menu 8</a></li>
-        </ul>
-    </nav>            
-
+    <form>
+        <div>
+            <label for="firstname">Fornavn:</label>
+            <input type="text" name="firstname" id="firstname">
+        </div>
+        <div>
+            <label for="lastname">Efternavn:</label>
+            <input type="text" name="lastname" id="lastname">
+        </div>
+        <div>
+            <button type="button" id="send" class="btn btn-success">Send</button>
+        </div>
+    </form>
+    
     <script src="js/dom-objects.js"></script>
 </body>
 </html>
