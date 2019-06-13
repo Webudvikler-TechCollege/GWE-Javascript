@@ -7,7 +7,7 @@
 </head>
 <body>
     
-    <button type="button" id="#335">Pink</button>
+    <button type="button" id="pink">Pink</button>
     <button type="button" id="green">Grøn</button>
     <button type="button" id="red">Rød</button>
     <button type="button" id="black">Sort</button>
@@ -16,6 +16,29 @@
     <button type="button" id="brown">Brun</button>
     <button type="button" id="purple">Lilla</button>
 
-    <script src="js/dom-get-elements-by-tagname.js"></script>
+    <script>
+        //Henter alle button elementer ind i variablen myButtons
+        const myButtons = document.getElementsByTagName('button');
+
+        //Udskriver myList med en console.dir. I konsollen ligger 
+        //de enkelte buttons ligger fordelt på nogle tal. (0,1,2,3,4...) 
+        console.dir(myButtons);
+
+        //Løber button listen igennem med et for loop og tildeler hver
+        //enkelte button til variablen button
+        for(let button of myButtons) {
+            
+            //Udskriver hver enkelte punkt med en console.dir()
+            console.dir(button);
+
+            //Sætter click event med en funktion på hver button
+            button.onclick = function() {
+                //Farver body background med den farve der er button id (this)
+                //this er en reference til den knap der klikkes på
+                document.body.style.backgroundColor = this.id;
+            }
+        
+        }    
+    </script>
 </body>
 </html>

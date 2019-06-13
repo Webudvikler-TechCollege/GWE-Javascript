@@ -6,12 +6,30 @@
     <title>DOM Get Element By Id</title>
 </head>
 <body>
-    
-    <button type="button" id="myPinkButton">Gør baggrund lyserød</button>
-    <button type="button" id="myGreenButton">Gør baggrund grøn</button>
-    <button type="button" id="myButton" data-color="FF0">Farv baggrund med data attribut</button>
-    <button type="button" id="myResetButton">Nulstil baggrund</button>
 
-    <script src="js/dom-get-element-by-id.js"></script>
+    <input type="text" name="firstname" id="firstname" class="form-input textfield" value="Peter">
+
+    <script>
+        //Tildeler element med id firstname til variabel input
+        const input = document.getElementById('firstname');
+
+        //Udskriver som html tag i konsollen
+        console.log(input);
+
+        //Udskriver som javascript objekt i konsollen - GOD AT BRUGE!!!
+        console.dir(input);
+
+        //Udskriver elementets type
+        console.dir(input.type);
+
+        //Udskriver elementets id
+        console.dir(input.id);
+
+        //Udskriver elementets værdi
+        console.dir(input.value);
+
+        //Udskriver elementets liste af klasser
+        console.dir(input.classList);
+    </script>
 </body>
 </html>

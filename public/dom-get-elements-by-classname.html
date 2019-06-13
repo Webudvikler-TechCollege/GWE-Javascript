@@ -7,15 +7,31 @@
 </head>
 <body>
     
-    <button type="button" class="colorbtn" data-color="pink">Pink</button>
-    <button type="button" class="colorbtn" data-color="green">Grøn</button>
-    <button type="button" class="colorbtn" data-color="red">Rød</button>
-    <button type="button" class="colorbtn" data-color="black">Sort</button>
-    <button type="button" class="colorbtn" data-color="yellow">Gul</button>
-    <button type="button" class="colorbtn" data-color="cyan">Cyan</button>
-    <button type="button" class="colorbtn" data-color="brown">Brun</button>
+    <ul>
+        <li class="list">Peter</li>
+        <li class="list">Lise</li>
+        <li class="list">Jens</li>
+        <li class="list">Susanne</li>
+        <li class="list">Ole</li>
+        <li class="list">Hanne</li>
+    </ul>
 
+    <script>
+        //Henter alle elementer med klassen 'list' ind i variablen myButtons
+        const myList = document.getElementsByClassName('list');
 
-    <script src="js/dom-get-elements-by-classname.js"></script>
+        //Udskriver myList med en console.dir. I konsollen ligger 
+        //de enkelte punkter ligger fordelt på nogle tal. (0,1,2,3,4...) 
+        console.dir(myList);
+
+        //Løber listen igennem med et for loop og tildeler hver
+        //enkelte punkt til variablen list
+        for(let list of myList) {
+            //Udskriver hver enkelte punkt med en console.dir()
+            console.dir(list);
+            //Udskriver inner tekst fra hver enkelte punkt
+            console.dir(list.innerText);
+        }    
+    </script>
 </body>
 </html>

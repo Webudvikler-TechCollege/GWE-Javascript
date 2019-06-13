@@ -3,10 +3,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>DOM Create Element</title>
+    <title>DOM Create Elements</title>
 </head>
 <body>
     
-    <script src="js/dom-create-element.js"></script>
+
+    <script>
+        //Opretter ul element (createElement)
+        const ul = document.createElement('ul');
+        //Sætter id attribut med værdien 'navlist' på ul element (setAttribute)
+        ul.setAttribute('id', 'navlist');
+        //Opretter li element (createElement)
+        const li = document.createElement('li');
+        //Sætter class attribut med værdien 'list' på li element (setAttribute)
+        li.setAttribute('class', 'list');
+        //Tilføjer tekst til li element (innerText)
+        li.innerText = "Punkt 1";
+        //Tilføjer li element som child til ul element (appendChild)
+        ul.appendChild(li);
+        //Tilføjer ul element som first child til body element (prepend)
+        document.body.prepend(ul);
+    </script>
+        
 </body>
 </html>
