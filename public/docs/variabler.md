@@ -1,4 +1,4 @@
-# Var, let & const
+# Forskelle på var, let & const
 
 Variabler kan defineres på tre forskellige måder i javascript. Før ES6 brugte den gamle `var` metode og med ES6 blev metoderne `let` og `const` tilføjet. 
 
