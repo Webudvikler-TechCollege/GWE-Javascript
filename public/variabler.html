@@ -11,38 +11,17 @@
 <script>
     
         var x = '12'; //Gåseøjne giver tekststreng
+
         var y = 12; //Heltal (Integer)
 
         //ParseInt konverterer strenge til tal - såfremt værdien er et tal 
         console.log(parseInt(x)*y);
 
+        //If Betingelse - hvis/ellers
         if(y === x) {
             console.log('Sandt');
         } else {
             console.log('Falsk');
         }
-        
-
-        //Udskriv h1'er
-        var h1 = document.createElement('h1'); //<h1></h1>
-        h1.innerText = 'Hello World'; //<h1>Hello World</h1>
-        document.body.appendChild(h1); //Tilføj tag til body
-
-
-
-
-        //Udskriv div med section
-        var hest = document.createElement('div'); //<div></div>
-        hest.setAttribute('id', 'wrapper'); //<div id="wrapper"></div>
-        hest.setAttribute('class', 'mainwrapper blue'); //<div id="wrapper" class="mainwrapper blue"></div>
-
-        var salut = document.createElement('section');
-        salut.innerHTML = '<p class="test">Hilsen Webudviklerne</p>';
-        hest.appendChild(salut);
-
-        document.body.appendChild(hest); //Tilføj tag til body
-        console.dir(hest.classList);
-
-
     </script>  
 </html>
