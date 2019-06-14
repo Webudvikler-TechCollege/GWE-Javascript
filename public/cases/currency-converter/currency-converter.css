@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+h1 {
+    margin-bottom: 20px;
+}
+
 .wrapper {
     width: 60%;
     margin: 5% auto;
