@@ -19,13 +19,29 @@ En variabel i et local scope er, når variablen erklæres inde i en funktion og 
 **Eksempel:**
 
 ```javascript
-var global = "Hej verden";
+var global_greeting = "Hej verden";
 
 function myFunction() {
-    var local = "Hej Vejgård";
+    var local_greeting = "Hej Tech College";
 }
 ```
 Der var problemer med keywordet *var* i forhold til de globale og lokale scopes, og med lanceringen af ES6 blev *let* og *const* introduceret.
+
+### Vægtning
+
+Vægtning i javascript er en mekanisme, som gør at variabler og funktioner flyttes til toppen af deres rækkevidde og inden afvikling af kode. Det betyder at vi f.eks. kan kalde en funktion i en script fil selvom at funktionen først bliver defineret længere nede i filen.
+
+**Vægtning af `var`**
+
+Variabler deineret med var er vægtet til toppen af deres scope, hvilket betyder at de automatisk bliver erklæret med en *undefined* værdi.
+
+**Eksempel:**
+
+```javascript
+var greeting;
+console.log(greeting); //Undefined
+greeting = "Hej verden";
+```
 
 ## Let 
 
@@ -49,12 +65,12 @@ Og en let variabel kan opdateres men ikke omdeklareres.
 **Eksempel:**
 
 ```javascript
-let text = "Testing...";
+let greeting = "Hej Verden";
 
-if(text) {
-    text = "Still testing..."; //Ok
+if(greeting) {
+    greeting = "Hej Tech College"; //Ok
 
-    let text = "More testing..."; //Vil give fejl
+    let greeting = "Hej Tech College"; //Vil give fejl
 }
 
 ```
@@ -67,35 +83,39 @@ Men hvis den samme variabel er defineret i forskellige scopes, vil der ikke vær
 let greeting = "Hej verden";
 
 if(true) {
-    let greeting = "Hej Vejgård";
-    console.log(greeting); // "Hej Vejgård"
+    let greeting = "Hej Tech College";
+    console.log(greeting); // "Hej Tech College"
 }
 console.log(greeting); //"Hej Verden"
 ```
 
 Dette skyldes, at begge tilfælde behandles som forskellige variabler, da de har forskellige scopes.
 
+### Vægtning af `let`
+
+Ligesom `var`, vægtes `let` erklæringer til toppen. I modsætning til `var`, der initialiseres som udefineret, bliver `let` variabler ikke automatisk initialiseret. Så hvis du forsøger at bruge en `let` variabel før deklarationen, får du en *Reference Error*.
+
 ## Const 
 
 Man bruger keywordet `const` til at erklære variabler med konstante værdier og disse deler nogle ligheder med let erklæringer.
 
-**Variabler erklæret med `const` er block scoped**
+Variabler erklæret med `const` er block scoped.
 
 Ligesom variabler erklæret med `let`, kan `const` erklæringer kun tilgås i det scope, hvor de er blevet erklæret.
 
-**Variabler erklæret med `const` kan ikke opdateres eller omdeklareres**
+Variabler erklæret med `const` kan ikke opdateres eller omdeklareres.
 
 Dette betyder, at værdien af en variabel erklæret med `const` forbliver den samme inden for sit anvendelsesområde. Den kan ikke opdateres eller omdeklareres. Derfor vil nedenstående give en fejl:
 
 **Eksempel:**
 ```javascript
 const greeting = "Hej verden";
-greeting = "Hej Vejgård";
+greeting = "Hej Tech College"; //Vil give fejl!
 ```
 Eller dette:
 ```javascript
 const greeting = "Hej verden";
-const greeting = "Hej Vejgård";
+const greeting = "Hej Vejgård"; //Vil give fejl!
 ```
 
 Hver variabel erklæret med `const` skal derfor initialiseres på samme tidspunkt som den bliver erklæret.
@@ -117,11 +137,16 @@ greeting = {
 ```
 men vi kan gøre sådan her:
 ```javascript
-greeting.message: "Hej alle mennesker i verden"
+greeting.message: "Hej Tech College"
 ```
+### Vægtning af `const`
+Ligesom `let` variabler bliver `const` variabler vægtet til toppen, men ikke automatisk initialiseret.
+
 ## Forskelle i en nøddeskal
 - `var` erklæringer er global scoped eller function scoped mens `let` og `const` er blok scoped.
 
 - `var` variabler kan opdateres og omdeklareres inden for dens anvendelsesområde; `let` variabler kan opdateres, men ikke omdeklareres; `const` variabler kan hverken opdateres eller omdeklareres.
+
+- De er alle hævet til toppen af deres rækkevidde, men mens `var` variablerne initialiseres med undefined, initialiseres `let` og `const` variabler ikke.
 
 - Mens `var` og `let` kan deklareres uden at blive initialiseret, skal `const` initialiseres under erklæringen.
