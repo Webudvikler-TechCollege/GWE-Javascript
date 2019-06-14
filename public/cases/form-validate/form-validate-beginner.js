@@ -1,6 +1,7 @@
 const button = document.getElementById('send');
 
 button.onclick = function() {
+
     //Tjek input:text felt firstname
     const firstname = document.getElementById('firstname');
     if(firstname.value === '') {
@@ -12,10 +13,28 @@ button.onclick = function() {
     //Tjek input:text felt lastname
     const lastname = document.getElementById('lastname');
     if(!lastname.value) {
-        alert('Feltet efternavn må ikke være tomt!');
-        lastname.focus();
-        return false;
+        if(!lastname.nextElementSibling) {
+            let message = "<span>Fejl!</span>";
+            lastname.insertAdjacentHTML('afterend', message);
+            //alert('Feltet efternavn må ikke være tomt!');
+            lastname.focus();
+            return false;
+        }
     }
+
+    //Tjek input:text felt lastname
+    const email = document.getElementById('email');
+    if(!email.value) {
+        alert('Feltet email må ikke være tomt!');
+        email.focus();
+        return false;
+    } else {
+        if(!isValidEmail(email.value)) {
+            alert('Du skal indtaste en korrekt email adresse!');
+            email.focus();
+            return false;    
+        }
+    } 
 
     //Tjek select felt gender
     const gender = document.getElementById('gender');
@@ -34,4 +53,10 @@ button.onclick = function() {
     }
 
     alert('Formularen blev afsendt');
+}
+
+//Tjekker om værdi har en gyldig email syntaks
+function isValidEmail(value) {
+    let pattern = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+    return pattern.test(value);
 }
