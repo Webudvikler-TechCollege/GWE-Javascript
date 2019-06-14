@@ -1,5 +1,7 @@
 /**
  * Funktion til at slide navigation med 
+ * Video Tutorial fra DevEd på Youtube
+ * https://www.youtube.com/watch?v=gXkqy0b4M5g
  */
 const navSlider = function() {
     
