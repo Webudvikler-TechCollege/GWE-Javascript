@@ -2,11 +2,36 @@
 
 Variabler kan defineres på tre forskellige måder i javascript. Før ES6 brugte den gamle * *var* * metode og med ES6 blev metoderne * *let* * og * *const* * tilføjet. 
 
-Der er selvfølgelig forskelle på dem og 
+Der er selvfølgelig forskelle på dem og dem vil vi kigge på herunder.
 
 ## Var
 
-VAR
+Førhen brugte man * *var* * til at deklarere variabler. Da havde Javascript to typer af anvendelsesområder for variabler: * *Global Scope* * og * *Function Scope* *.
+
+### Global scope
+
+En variabel i et global scope er, når variablen erklæres uden for en funktion.
+
+### Local scope
+
+En variabel i et local scope er, når variablen erklæres inde i en funktion og dermed kun kan tilgås indenfor funktionen lokale scope.
+
+Eksempel:
+
+```
+var global = "Hej verden";
+
+function myFunction() {
+    var local = "Hej Vejgård";
+}
+```
+
+ES2015 introducerede to vigtige nye JavaScript-søgeord: lad og const.
+
+Disse to nøgleord giver variabler for blokomfang (og konstanter) i JavaScript.
+
+Før ES2015 havde JavaScript kun to typer af anvendelsesområde: Global Scope og Function Scope.
+
 Før fremkomsten af ​​ES6 var varklæringerne regerede som konger. Der er problemer forbundet med variabler, der er erklæret med var. Derfor var det nødvendigt, at nye måder til at erklære variabler fremkommer. Først skal vi dog forstå var mere, før vi diskuterer et af disse spørgsmål.
 
 Omfanget af var
