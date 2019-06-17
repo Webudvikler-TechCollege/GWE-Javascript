@@ -1,3 +1,12 @@
+<!--
+insertAdjacentHTML(position, text);
+Funktion til at indsætte tilstødende html med. 
+Argumentet position skal sættes til en af følgende:
+'beforebegin': Før elementet
+'afterbegin': Inde i elementet - før det første child element
+'beforeend': Inde i elementet - efter det sidste child element
+'afterend': Efter elementet
+-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -19,7 +28,7 @@
 
         //Sætter click event med function
         button.onclick = function() {
-            alert('Knappen blev klikket!');
+            wrapper.insertAdjacentHTML('beforeend', '<div>Du har klikket på knappen!</div>');
         }
     </script>
 </body>
