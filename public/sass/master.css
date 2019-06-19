@@ -1,4 +1,4 @@
-input[type=text], input[type=email], input[type=number], select, textarea {
+input[type=text], input[type=email], input[type=number], input[type=password], select, textarea {
   border-radius: 3px;
   border: solid 1px #ccc;
   padding: 6px;
@@ -28,7 +28,7 @@ label {
   width: 200px;
 }
 
-input[type=text].field-error, input[type=email].field-error, input[type=number].field-error, select.field-error {
+input[type=text].field-error, input[type=email].field-error, input[type=number].field-error, input[type=password].field-error, select.field-error {
   border-color: #f0005e;
 }
 

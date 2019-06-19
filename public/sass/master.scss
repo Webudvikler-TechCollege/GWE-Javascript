@@ -26,7 +26,7 @@ label {
   width: 200px;
 }
 
-input[type=text], input[type=email], input[type=number], select   {
+input[type=text], input[type=email], input[type=number], input[type=password], select   {
   @extend %input-field;
   &.field-error {
     border-color: $error-color;
