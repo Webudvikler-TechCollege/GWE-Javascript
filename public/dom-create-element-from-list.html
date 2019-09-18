@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM Create Elements</title>
+</head>
+<body>
+
+    <div id="student-details-wrapper"></div>
+    
+
+    <script>
+        const student_single_array = ["Mogens", "Jensen", "Allegade 8", "9000", "Aalborg", 1988];
+
+        const students = [
+            ["Mogens", "Jensen", "Allegade 8", "9000", "Aalborg", 1988],
+            ["Hans", "Hansen", "Birkevej 12", "9210", "Aalborg SØ", 1992],
+            ["Lis", "Er Stille", "Tomsgade 11", "9900", "Frederikshavn", 1996],
+            ["Ann Tenna", "Jensen", "Gormsgade 2", "9800", "Hjørring", 1981],
+            ["Brian", "Sandberg", "Gormsgade 2", "4571", "Grevinge", 1986],
+            ["Kikku", "Muut", "Gormsgade 2", "3905", "Nuuk", 1970],
+            ["Anne", "Andersen", "Drukvej 12", "4444", "Sønder Slamsted", 1998]
+        ]
+
+        let ul = document.createElement('ul');
+
+        for(let student of students) {
+            let li = document.createElement('li');
+            li.setAttribute("class", "student");
+
+            let a = document.createElement('a');
+            a.innerText = `${student[0]} ${student[1]}`;
+
+            a.addEventListener('click', function() {
+                let div = document.createElement('div');
+                div.innerHTML = `${student[0]} ${student[1]}<br> 
+                                    ${student[2]}<br>
+                                    ${student[3]} ${student[4]}`;
+
+                document.getElementById('student-details-wrapper').innerText = '';
+                document.getElementById('student-details-wrapper').appendChild(div);
+                
+            });
+
+            li.appendChild(a);
+
+            ul.appendChild(li);
+        }
+        document.body.prepend(ul);
+
+
+        /*
+        let string = `<ul>\n`;
+
+        for(let student of students) {
+            string += `<li>Jeg hedder ${student[0]} ${student[1]}</li>\n`;
+        }
+        string += `</ul>`;
+        console.dir(string);
+        document.body.innerHTML = string;
+        */
+    </script>
+
+
+
+</body>
+</html>
