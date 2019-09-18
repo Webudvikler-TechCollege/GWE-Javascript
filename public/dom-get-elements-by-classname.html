@@ -16,22 +16,31 @@
         <li class="list">Hanne</li>
     </ul>
 
+    <div id="list-wrapper"></div>
+
     <script>
         //Henter alle elementer med klassen 'list' ind i variablen myButtons
         const myList = document.getElementsByClassName('list');
 
         //Udskriver myList med en console.dir. I konsollen ligger 
         //de enkelte punkter ligger fordelt på nogle tal. (0,1,2,3,4...) 
-        console.dir(myList);
+        //console.dir(myList[3]);
 
+        
         //Løber listen igennem med et for loop og tildeler hver
         //enkelte punkt til variablen list
+        let html = "<section>\n";
+
         for(let list of myList) {
             //Udskriver hver enkelte punkt med en console.dir()
-            console.dir(list);
-            //Udskriver inner tekst fra hver enkelte punkt
-            console.dir(list.innerText);
-        }    
+            html += `<div>${list.innerHTML}</div>\n`;
+            //console.dir(list);
+        } 
+        html += "</section>\n";
+
+        document.getElementById('list-wrapper').innerHTML = html;
+
+        console.log(html);
     </script>
 </body>
 </html>
