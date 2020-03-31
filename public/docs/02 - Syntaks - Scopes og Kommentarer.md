@@ -16,7 +16,11 @@ ___
 ## Scopes
 Scopes kan oversættes til *anvendelsesområder* og kan bruges til at lave afgrænsninger i din kode. 
 
-Man bruger *curly brackets* - også kaldet tuborgklammer - til at definere sine scopes med.
+Man bruger *curly brackets* - også kaldet tuborgklammer - til at definere sine scopes med:
+
+```js
+{ }
+```
 
 Man kan også se på scopes som indenterede niveauer i sin kode. Hvis man er i niveau 0 kalder man det *global scope*.
 
