@@ -25,13 +25,13 @@ Eksempel:
 // Her er du i det der kaldes global scope. 
 
 {
-    //Og her befinder man sig i et lokalt scope
+    // Her befinder man sig i et lokalt scope
 }
 
 {
-    //Og her befinder man sig i et lokalt scope #1
+    // Her befinder man sig i et lokalt scope #1
     {
-        //Og her befinder man sig i et lokalt scope #2
+        // Her befinder man sig i et lokalt scope #2
     }
 }
 ```
