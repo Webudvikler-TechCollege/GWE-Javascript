@@ -16,7 +16,7 @@ ___
 ## Scopes
 Scopes kan oversættes til *anvendelsesområder* og kan bruges til at lave afgrænsninger i din kode. 
 
-De anvendes typisk i forbindelse med funktioner eller betingelser. Eksemplerne i dette afsnit er forenklede for at præcisere hvad begrebet scope dækker over.
+De anvendes typisk i forbindelse med funktioner eller betingelser. Eksemplerne i dette afsnit er forenklede for at præcisere et *scopes* betydning.
 
 Man bruger *curly brackets* - også kaldet tuborgklammer - til at definere sine scopes med:
 
