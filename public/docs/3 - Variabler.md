@@ -8,14 +8,14 @@ Variabler består af en nøgle (*key*) og en værdi (*value*).
 
 Når vi opretter en variabel hedder det i fagsprog at vi **_deklarerer_** en variabel. Det betyder at vi angiver variablen med et navn (key) og tildeler den en værdi (value).
 
-Til at deklarere vores variabel skal vi bruge keywordet **_let_**.
+Til at deklarere vores variabel skal vi bruge keywordet `let`.
 
 **Eksempel - Deklaration af en variabel:**
 
 ```js
 let key = value;
 ```
-En variabel skal kun deklareres een gang indenfor samme scope. Hvis du senere vil ændre værdien skal du ikke bruge *let*:
+En variabel skal kun deklareres een gang indenfor samme scope. Hvis du senere vil ændre værdien skal du ikke bruge `let`foran:
 ```js
 // Deklarering 
 let key = value;
@@ -48,7 +48,7 @@ På samme måde kan vi have forskellige scripts som udfører en bestemt handling
 
 Det her ligger tæt op af algebra fra matematikkens verden.
 
-I nedenstående eksempel skal vores script omregne danske kroner til euro. Algoritmen er den samme men ved at ændre værdien på variablen amount_dkk kan vi ændre resultatet:
+I nedenstående eksempel skal vores script omregne danske kroner til euro. Algoritmen er den samme men ved at ændre værdien på variablen `amount_dkk` kan vi ændre resultatet:
 ```js
 // Deklarerer variabel til beløb i danske kroner
 amount_dkk = 100;
@@ -59,6 +59,6 @@ result = (amount_dkk * currency_rate_ecu);
 
 console.log(result);
 ```
-I ovenstående eksempel kan vi altså nøjes med at ændre værdien af variablen *dkk_amount* for at påvirke vores resultat.
+I ovenstående eksempel kan vi altså nøjes med at ændre værdien af variablen `dkk_amount` for at påvirke vores resultat.
 
 
