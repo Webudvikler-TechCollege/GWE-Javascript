@@ -60,3 +60,5 @@ result = (amount_dkk * currency_rate_ecu);
 console.log(result);
 ```
 I ovenstående eksempel kan vi altså nøjes med at ændre værdien af variablen *dkk_amount* for at påvirke vores resultat.
+
+
