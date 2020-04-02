@@ -52,10 +52,13 @@ I nedenstående eksempel skal vores script omregne danske kroner til euro. Algor
 ```js
 // Deklarerer variabel til beløb i danske kroner
 amount_dkk = 100;
+
 // Deklarerer variabel med valuta kurs for euro (1 DKK = 0.13 €)
 currency_rate_ecu = 0.13;
+
 // Deklarerer variabel til resultatet
 result = (amount_dkk * currency_rate_ecu);
+
 // Udskriver resultatet
 console.log(result);
 ```
