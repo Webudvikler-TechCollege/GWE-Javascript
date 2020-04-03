@@ -1,10 +1,10 @@
-# Javascript Variabler
+# Variabler
 
 Variabler bruges hele tiden i javascript - og i alle former for programmeringssprog.
 
 En variabel er en slags container hvor vi kan lagre  dataværdier. Det særlige ved en variabel er - som navnet siger - at vi har mulighed for løbende at ændre dataværdien.
 
-Variabler består af en nøgle (*key*) og en værdi (*value*).
+Variabler består af en nøgle (*key*) og en værdi (*value*). Man kalder også denne samspil for `key-value-pairs`.
 
 Når vi opretter en variabel hedder det i fagsprog at vi **_deklarerer_** en variabel. Det betyder at vi angiver variablen med et navn (key) og tildeler den en værdi (value).
 
@@ -17,10 +17,10 @@ let key = value;
 ```
 En variabel skal kun deklareres een gang indenfor samme scope. Hvis du senere vil ændre værdien skal du ikke bruge `let`foran:
 ```js
-// Deklarering 
+// Deklarering af variabel
 let key = value;
 
-// Ændring af værdi
+// Ændring af variabel værdi
 key = another_value;
 ```
 Du bestemmer selv navnet på din variabel. Det er en god ide at give dem navne der er sigende for værdien. I  programmering bruger man typisk engelske begreber til sine variabler.
