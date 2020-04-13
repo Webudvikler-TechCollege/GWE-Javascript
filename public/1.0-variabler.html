@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Variabler</title>
+</head>
+<body>
+
+</body>
+
+<script>
+        /**
+         *  Deklarer variabel med et tal (number)
+         *  Gælder også decimaltal
+         **/
+        let carYear = 2020;
+        let carMotor = 1.8; 
+
+        console.log("carYear: " + typeof carYear);
+        console.log("carMotor: " + typeof carMotor);
+
+        /**
+         * Deklarer variabel med en tekststreng (string)
+         * Værdi sættes i gåseøjne
+         **/
+        let carName = 'Mercedes'; 
+        let carPrice = "220000";
+
+        console.log("carName: " + typeof carName);
+        console.log("carPrice: " + typeof carPrice);
+
+        /**
+         * Metoden ParseInt kan konvertere en streng til tal
+         * Hvis værdien er et tal eller vil værdien blive 0.
+         * I det første eksempel plusses et tal til en tekststreng
+         * I det andet konveteres tekststrengen til et tal med 
+         * parseInt og det giver et andet resultat
+         **/ 
+        console.log("text + number: " + carPrice + 120);
+        console.log("parseInt + number: " + (parseInt(carPrice) + 120));
+
+        /**
+         *  Deklarerer en variabel med et array af data
+         *  Værdier associeres med key i firkantede klammer []
+         **/
+        let arrCars = ["Mercedes", "BMW", "Fiat", "Opel", "Toyota"];
+
+        console.log("Type of arrCars: " + typeof arrCars);
+        console.log(arrCars);
+
+        /**
+         *  Deklarerer en variabel med et object
+         *  Værdier associeres med names
+         **/
+        let objCar = {
+            name: "Skoda",
+            type: "Fabia",
+            motorSize: 2.0,
+            numDoors: 5,
+            year: 2020
+        };
+
+        console.log(typeof objCar);
+        console.log(objCar);
+
+    </script>  
+</html>

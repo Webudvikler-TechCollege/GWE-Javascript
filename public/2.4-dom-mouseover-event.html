@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM Click event</title>
+</head>
+<body>
+
+    <button type="button" id="send">Send</button>
+    
+    <script>
+        //Sætter variabel button til button element ud fra id send
+        const button = document.getElementById('send');
+
+        //Sætter click event med function
+        button.onmouseover = function() {
+            alert('Musen blev holdt over!');
+        }
+    </script>
+</body>
+</html>

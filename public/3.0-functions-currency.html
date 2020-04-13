@@ -14,13 +14,6 @@
          * @param {number} price 
          * @param {string} currency - default er DKK
          */
-        let test = 10;
-
-        test = 20;
-
-        test = "Hej hej";
-        console.log(test);
-
         function getVat(price, currency = "DKK") {
             return Math.round(price * 0.25) + ' ' + currency;
         }
