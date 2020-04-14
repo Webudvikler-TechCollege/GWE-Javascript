@@ -2,31 +2,100 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Variabler</title>
+    <title>Operatorer</title>
 </head>
 <body>
 
 </body>
 
     <script>
-        // Deklarerer variabel til resultater
-        let result;
-
         /**
-         *  0. Eksempel på løsning af opgave 
-         */
-        result = 8 - 6; //Aritmestisk operator - substraction
+         *  #### Eksempel på løsning af opgave ####
+         *  Forklar hvad der sker i nedenstående udtryk (expressions):
+         * 
+         *  #0: 
+         *  Variablen result tildeles (=) resultatet af 8 minus 6 (-). 
+         *  {
+         *      let result = 8 - 6;
+         *  }
+         **/
+
+        // Aritmetiske operatorer
+        {
+            let x = 5;
+            let y = 10;
+            let result;
+
+            // #1
+            result = x + 120;
+
+            // #2
+            result = y / x;
+
+            // #3
+            result = (x += y);
+
+            // #4
+            result = y % x;
+        }
+
+        // Sammenlignings operatorer
+        {
+            let x = 100;
+            let y = "100";
+
+            // #5
+            result = (x == y);
+
+            // #6
+            result = (x === y);
+
+            // #7
+            result = (x != y);
+
+            // #8
+            result = (x !== y);
+
+            // #9
+            result = (11 >= 10);
+        }
 
 
-        // 1. 
-        let result = 10 * 10;
-
-        // 2. 
-        let x = 8;
+        // String operatorer
+        {
+            // #10
+            let firstName = "Peter";
+            let lastName = "Jensen";
+            let fullname = firstName + " " + lastName;
+        }
         
+        // Logiske operatorer
+        {
+            let x = 1;
+            let y = 0;
+            let result;
+            
+            // #11
+            result = x && y;
+            console.log(result);
 
+            // #12
+            result = x || y;
+            console.log(result);
 
+            // #13
+            result = !y;
+            console.log(result);
 
+            // #14
+            result = x++;
+            console.log(result);
+
+            // #15
+            result = ++y;
+            console.log(result);
+            
+        }        
 
     </script>  
 </html>
