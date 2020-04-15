@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Betingede udsagn</title>
+</head>
+<body>
+
+</body>
+
+
+
+
+    <script>
+        let zipcode = 5690;
+        let district;
+
+        // Eksempel på anvendelse af if-else statement med AND operator
+        if(zipcode > 999 && zipcode < 5000) {
+            district = "Sjælland, Lolland-Falster & Møn";
+        } else if(zipcode > 4999 && zipcode < 6000) {
+            district = "Fyn";
+        } else {
+            district = "Jylland";
+        }
+
+        if(zipcode === 9000 || zipcode === 9210) {
+            city = "Aalborg";
+        }
+
+    </script>  
+</html>
