@@ -32,7 +32,6 @@
         console.log(greeting);
 
         // Betingede udsagn med postnumre
-
         let zipcode = 5690;
         let district;
 
@@ -46,14 +45,14 @@
         }
 
         // Eksempel på anvendelse af if-else statement med OR operator
-        if(zipcode === 9000 || zipcode === 9210) {
+        if(zipcode === 9000 || zipcode === 9210 || zipcode === 9220) {
             city = "Aalborg";
         }
 
         // Eksempel på en switch
         let city = "Aalborg";
 
-        switch(city) {
+        switch(city.toUpperCase()) {
             default:
                 zipcode = 0;
                 break;
@@ -67,7 +66,7 @@
                 zipcode = 8000;
                 break;
             case "AALBORG":
-                zipcode = 5000;
+                zipcode = 9000;
                 break;
         }
 
