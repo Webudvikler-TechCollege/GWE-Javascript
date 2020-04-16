@@ -49,6 +49,30 @@
         if(zipcode === 9000 || zipcode === 9210) {
             city = "Aalborg";
         }
+
+        // Eksempel på en switch
+        let city = "Aalborg";
+
+        switch(city) {
+            default:
+                zipcode = 0;
+                break;
+            case "KØBENHAVN":
+                zipcode = 1000;
+                break;
+            case "ODENSE":
+                zipcode = 5000;
+                break;
+            case "AARHUS":
+                zipcode = 8000;
+                break;
+            case "AALBORG":
+                zipcode = 5000;
+                break;
+        }
+
+        console.log(zipcode);
+
     </script>
     </head>
 <body>
