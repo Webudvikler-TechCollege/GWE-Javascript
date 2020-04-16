@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Betingede udsagn</title>
+    <script>
+
+
+        let greeting = "";
+
+        let date = new Date();
+        let hour = date.getHours();
+
+        if(hour < 10) {
+            greeting = "Go'morn";
+        } else if(hour < 20) {
+            greeting = "Goddag";
+        } else {
+            greeting = "Godaften";
+        }
+
+
+        if(hour > 6 && hour < 10) {
+            greeting = "Go'morn";
+        } else if(hour > 10 && hour < 20) {
+            greeting = "Goddag";
+        } else if(hour > 20 && hour < 23) {
+            greeting = "Godaften";
+        } else {
+            greeting = "Godnat";
+        }
+        console.log(greeting);
+
+        // Betingede udsagn med postnumre
+
+        let zipcode = 5690;
+        let district;
+
+        // Eksempel på anvendelse af if-else statement med AND operator
+        if(zipcode > 999 && zipcode < 5000) {
+            district = "Sjælland, Lolland-Falster & Møn";
+        } else if(zipcode > 4999 && zipcode < 6000) {
+            district = "Fyn";
+        } else {
+            district = "Jylland";
+        }
+
+        // Eksempel på anvendelse af if-else statement med OR operator
+        if(zipcode === 9000 || zipcode === 9210) {
+            city = "Aalborg";
+        }
+    </script>
+    </head>
+<body>
+    
+</body>
+</html>
