@@ -20,7 +20,55 @@
             document.getElementById("presenter").innerHTML = inputValue;
 
         }
-    </script>
-    
+
+        // Array / Object Session fra fredagsmøde med kun 6 fremmødte :(
+        // De fik så en god gang array juice :D
+
+        let arrSimple = [
+            { name: "Bo", city: "Aalborg", zipcode: 9000 },
+            { name: "Jens", city: "Nibe", zipcode: 9240 },
+            { name: "Sune", city: "Hune", zipcode: 9492 }
+        ];
+
+        console.log(arrSimple);
+
+        let arrGoals = [
+            { 
+                goal: 1,
+                title: 'No poverty',
+                image: 'TheGlobalGoals_Icons_Color_Goal_1.svg', 
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...'
+            },
+            { 
+                goal: 2,
+                title: 'Zero Hunger',
+                image: 'TheGlobalGoals_Icons_Color_Goal_1.svg', 
+                description: 'Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...'
+            },
+            { 
+                goal: 3,
+                title: 'Good health and well being',
+                image: 'TheGlobalGoals_Icons_Color_Goal_3.svg', 
+                description: 'Adipiscing elit...'
+            }
+        ];
+
+        let output = '';
+
+        for(let item of arrGoals) {
+            output += `<article class="goals">
+                            <img src="/images/desktop/${item.image}" alt="priority-one">
+                            <div class="overlay">
+                            <h2 class="itemTitle">${item.title}</h2>
+                            <p class="itemInfo">${item.description}</p>
+                            </div>
+                        </article>`;
+        }
+
+        document.getElementById("presenter").innerHTML = output;
+
+
+</script>
+
 </body>
 </html>
