@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <label for="zipcode">Postnummer:</label>
+    <input type="text" name="zipcode" id="zipcode" value="9000">
+    <button id="send">Send felt</button>
+
+    <div id="presenter"></div>
+
+    <script>        
+        document.getElementById("send").onclick = function() {
+
+            let inputValue = document.getElementById("zipcode").value;
+            document.getElementById("presenter").innerHTML = inputValue;
+
+        }
+    </script>
+    
+</body>
+</html>
