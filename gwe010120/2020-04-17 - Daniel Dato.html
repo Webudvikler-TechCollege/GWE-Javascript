@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel Dato Hejs</title>
+    <script>
+        // Vis åbningstider for butik
+        // Åben alle dage kl. 10.00 - 16.00
+        // Dog lukket mandag
+        let weekDay = new Date().getDay();
+        let currentHour = new Date().getHours();
+        let openHour = 10;
+        let closeHour = 16;
+        let arrOpenWeekdays = [0,2,3,4,5,6];
+
+        // Kl. 00.00 - 15.59 alle dage, minus mandag, vises nuværende dags åbningstid
+        if (currentHour < closeHour && (arrOpenWeekdays.includes(weekDay))) {
+            getWeekDayName(weekDay);
+            console.log('I dag ' + weekDayName + ' har vi åben kl. ' + openHour + '.00 - ' + closeHour + '.00.')
+        }
+        // Kl. 16.00 - 23.59 alle dage, minus søndag, vises næste dags åbningstid
+        else if (currentHour >= closeHour && (arrOpenWeekdays.includes(weekDay))) {
+            weekDay += 1;
+            getWeekDayName(weekDay);
+            console.log('Vi åbner igen ' + weekDayName + ' kl. ' + openHour + '.00 - ' + closeHour + '.00.')
+        }
+        // Kl. 00.00 - 15.59 mandag og kl. 16.00 - 23.59 søndag vises tirsdags åbningstid
+        else if ((currentHour < closeHour && weekDay == 1) || (currentHour >= closeHour && weekDay == 0)) {
+            console.log('Vi har lukket indtil tirsdag kl. ' + openHour + '.00.');
+        }
+
+        // Evaluerer ugedagstallet og bestemmer navnet ud fra dette
+        function getWeekDayName(weekDay) {
+        switch(weekDay) {
+            case 0:
+                weekDayName = "søndag";
+                break;
+            case 1:
+                weekDayName = "mandag";
+                break;
+            case 2:
+                weekDayName = "tirsdag";
+                break;
+            case 3:
+                weekDayName = "onsdag";
+                break;
+            case 4:
+                weekDayName = "torsdag";
+                break;
+            case 5:
+                weekDayName = "fredag";
+                break;
+            case 6:
+                weekDayName = "lørdag";
+                break;
+            case 7:
+                weekDayName = "søndag";
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
