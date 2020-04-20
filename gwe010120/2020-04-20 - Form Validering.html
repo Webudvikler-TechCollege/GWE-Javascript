@@ -6,7 +6,7 @@
     <title>2020-04-20 Form validering</title>
 </head>
 <body>
-    <form>
+    <form id="myForm">
         <fieldset>
             <div>
                 <label for="firstname">Fornavn:</label>
@@ -21,5 +21,40 @@
             </div>
         </fieldset>
     </form>
+
+    <script>
+        let btn = document.getElementById('send');
+        btn.addEventListener("click", function() {
+            let hasErrors = false;
+            
+            let firstname = document.getElementById("firstname");
+            if(!firstname.value) {
+                if(!firstname.nextElementSibling) {
+                    let msg = '<span class="text-error">Du skal udfylde feltet</span>';
+                    //Indsæt msg efter det pågældende felts sluttag
+                    firstname.insertAdjacentHTML('afterend', msg);
+                }
+                firstname.focus();
+                hasErrors = true;
+                return false;
+            }
+
+            if(!document.getElementById("lastname").value) {
+                if(!lastname.nextElementSibling) {
+                    let msg = '<span class="text-error">Du skal udfylde feltet</span>';
+                    //Indsæt msg efter det pågældende felts sluttag
+                    lastname.insertAdjacentHTML('afterend', msg);
+                }
+                lastname.focus();
+                hasErrors = true;
+                return false;
+            }            
+
+            if(!hasErrors) {
+                document.getElementById("myForm").submit();
+            }
+
+        });
+    </script>
 </body>
 </html>
