@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <ul>
+        <li id="person1" class="list-item">Bo</li>
+        <li id="person2" class="list-item2">Ulla</li>
+        <li id="person3" class="list-item">Jens</li>
+        <li id="person4" class="list-item2">Per</li>
+        <li id="person5" class="list-item">Pia</li>
+        <li id="person6" class="list-item2">Mette</li>
+        <li id="person7" class="list-item">Thomas</li>
+        <li id="person8" class="list-item2">Tim</li>
+        <li id="person9" class="list-item">Jette</li>
+        <li id="person10" class="list-item2">Lars</li>
+    </ul>
+
+    <script>
+        // Henter html collection
+        let htmllist = document.getElementsByTagName('li');
+        console.log(htmllist);
+        // For/of loop på HTMLCollection
+        for(let item of htmllist) {
+            console.dir(item);
+        }        
+
+        // Henter nodelist
+        let nodelist = document.querySelectorAll('li');
+        console.log(nodelist);
+        // For/of loop på Nodelist
+        for(let item of nodelist) {
+            console.dir(item);
+        }        
+    </script>
+</body>
+</html>
