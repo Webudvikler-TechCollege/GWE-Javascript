@@ -6,8 +6,39 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <nav id="primaryNav"></nav>
     <script>
+        let arrItems = [
+            ["Bo", "bohansen@coldmail.com", "Testvej 22", 9876, "Farsø"],
+            ["Tim", "smukfyr@eb.dk", "Oddervej 22", 9000, "Aalborg"],
+            ["Kim", "dm@techcollege.dk", "Bomvej 23", 9520, "Skørping"]
+        ];
+
+        /*
+        Hvordan vi kan se et array rent visuelt
+        arrItem[0] = "Bo";
+        arrItem[1] = "Tim";
+        arrItem[2] = "Kim";
+        */
+
+        console.dir(arrItems);
+
+        // For/of
+        let item; // Variabel til mit for loop
+        let accHtml = "<ul>"; // Variabel til at samle akkumuleret html (Accumulated HTML)
+
+        for(item of arrItems) {
+
+            accHtml += `<li class="list">${item[0]}, <a href="mailto:${item[1]}">${item[1]}</a>, ${item[2]}, ${item[3]} ${item[4]}</li>`;
+
+            //SÅDAN SKAL MAN IKKE GØRE
+            //accHtml += "<li>" + item[0] + ", <a href=\"mailto:" + item[1] + "\">" + item[1] + "</a></li>";
+        }
+
+        accHtml += "</ul>";
+
+        document.getElementById('primaryNav').innerHTML = accHtml;
+
     </script>
 </body>
 </html>
