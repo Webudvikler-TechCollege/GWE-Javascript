@@ -17,6 +17,10 @@
 
     <script>
 
+        /**
+         * Definerer et array til billedsamling
+         * Hvert index er associeret med et objekt med det enkelte billedes egenskaber 
+         */ 
         let arrImages = [
             { image: "landscape-1.jpg", title: "Landskab", author: "Jens Jensen" },
             { image: "landscape-2.jpg", title: "Eng med marker", author: "Jens Jensen" },
@@ -25,52 +29,21 @@
             { image: "aband-places-1.jpg", title: "Forladt sted", author: "Jens Jensen" }
         ];
 
+        // Deklarerer variabler
         let accHtml = "", element;
 
+        // Looper arrayet med et for/of loop og genererer output med html og data fra objektet
         for(element of arrImages) {
             accHtml += `<img src="../assets/images/slider/${element.image}" title="${element.title} - Foto: ${element.author}">\n`;
         }
 
+        // Indsætter akkumuleret html i DOM element #gallery
         document.getElementById('gallery').innerHTML = accHtml;
 
+        // Skriver til konsollen
         console.log(accHtml);
         console.log(arrImages);
         console.log(arrImages[0].image);
-
-/**
- * Eksempel med verdensmål
- */
-
-     let arrGoals = [
-            { 
-                goal: 1,
-                title: 'No poverty',
-                image: 'TheGlobalGoals_Icons_Color_Goal_1.svg', 
-                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...'
-            },
-            { 
-                goal: 2,
-                title: 'Zero Hunger',
-                image: 'TheGlobalGoals_Icons_Color_Goal_1.svg', 
-                description: 'Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...'
-            }
-        ];
-
-        let output = '';
-
-        for(let item of arrGoals) {
-            output += `<article class="goals">
-                            <img src="/images/desktop/${item.image}" alt="priority-one">
-                            <div class="overlay">
-                            <h2 class="itemTitle">${item.title}</h2>
-                            <p class="itemInfo">${item.description}</p>
-                            </div>
-                        </article>`;
-        }
-
-        document.getElementById("presenter").innerHTML = output;
-
-
     </script>
 </body>
 </html>
