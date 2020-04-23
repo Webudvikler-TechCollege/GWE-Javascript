@@ -1,0 +1,101 @@
+* {
+    font-family: "Trebuchet MS";
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    transition: transform 2s;
+}
+
+header {
+    padding: 15px;
+    border-bottom: solid 1px #000;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 1fr;
+}
+
+section:first-child {
+    grid-column-start: 1;
+    grid-column-end: 9;
+    border-right: solid 1px #333;
+}
+
+section:last-child {
+    grid-column-start: 9;
+    grid-column-end: 13;
+}
+
+section {
+    padding: 15px;
+}
+
+button {
+    padding: 8px;
+    border-radius: 3px;
+}
+
+footer {
+    padding: 15px;
+    border-top: solid 1px #000;
+}
+
+#btnpanel div {
+    margin-top: 10px;
+}
+
+.example {
+    background-color: #fcc;
+}
+
+/* */
+.tx-color-red {
+    transition: color 1s;
+    color: #f00;
+}
+
+.tx-rotate {
+    transition: transform 2s;
+    transform: rotate(360deg);
+}
+
+.tx-big {
+    font-size: 18pt;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.visible {
+    visibility: visible;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.list-start-pos {
+    position: relative;
+    left: -999px;
+    transition: left 2s;
+}
+
+.list-end-pos {
+    position: relative;
+    left: 0px;
+}
+
+
+.body-rotate {
+    transform: rotate(-15deg);
+}
