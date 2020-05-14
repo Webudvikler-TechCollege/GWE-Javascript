@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body onclick="doThis()">
     
     <label for="zipcode">Postnummer:</label>
     <input type="text" name="zipcode" id="zipcode" value="9000">
@@ -14,6 +14,10 @@
     <div id="presenter"></div>
 
     <script>        
+
+        console.dir(document.getElementById('send').innerText);
+
+
         document.getElementById("send").onclick = function() {
 
             let inputValue = document.getElementById("zipcode").value;
@@ -30,7 +34,7 @@
             { name: "Sune", city: "Hune", zipcode: 9492 }
         ];
 
-        console.log(arrSimple);
+        //console.log(arrSimple);
 
 
 
