@@ -6,7 +6,7 @@
     <title>2020-04-20 Form validering</title>
 </head>
 <body>
-    <form id="myForm">
+    <form id="myForm" method="POST">
         <fieldset>
             <div>
                 <label for="firstname">Fornavn:</label>
@@ -17,6 +17,10 @@
                 <input type="text" name="lastname" id="lastname">
             </div>
             <div>
+                <label for="accept">Accept:</label>
+                <input required type="checkbox" name="accept" id="accept">           
+            </div>
+            <div>
                 <button type="button" id="send" class="btn btn-success">Send</button>
             </div>
         </fieldset>
@@ -24,13 +28,13 @@
 
     <script>
         let btn = document.getElementById('send');
+        let msg = '<span class="text-error">Du skal altså udfylde feltet!!!</span>';
         btn.addEventListener("click", function() {
             let hasErrors = false;
             
             let firstname = document.getElementById("firstname");
             if(!firstname.value) {
                 if(!firstname.nextElementSibling) {
-                    let msg = '<span class="text-error">Du skal udfylde feltet</span>';
                     //Indsæt msg efter det pågældende felts sluttag
                     firstname.insertAdjacentHTML('afterend', msg);
                 }
@@ -40,13 +44,25 @@
                 return false;
             }
 
+            let lastname = document.getElementById("lastname");
             if(!document.getElementById("lastname").value) {
                 if(!lastname.nextElementSibling) {
-                    let msg = '<span class="text-error">Du skal udfylde feltet</span>';
                     //Indsæt msg efter det pågældende felts sluttag
                     lastname.insertAdjacentHTML('afterend', msg);
                 }
                 lastname.focus();
+                hasErrors = true;
+                return false;
+            }            
+
+            let accept = document.getElementById("accept");
+            if(!accept.checked) {
+                if(!accept.nextElementSibling) {
+                    let msg = '<span class="text-error">Du skal acceptere!</span>';
+                    //Indsæt msg efter det pågældende felts sluttag
+                    accept.insertAdjacentHTML('afterend', msg);
+                }
+                accept.focus();
                 hasErrors = true;
                 return false;
             }            
