@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-    <title>CO2 Beregner</title>
+    <title>Kalorie Beregner</title>
     <style>
         .select-dropdown{
            color: #fff;
@@ -21,11 +21,11 @@
             <div class="col s12 m6">
               <div class="card blue-grey">
                 <div class="card-content white-text">
-                  <span class="card-title">CO<sup>2</sup> Beregner</span>
-                  <p>Her kan du beregne dit CO<sup>2</sup> udslip ud fra hvor mange kilometer du rejser og hvilket transportmiddel du anvender.</p>
+                  <span class="card-title">Kalorie Beregner</span>
+                  <p>Her kan du beregne hvor mange kalorier du forbrænder over tid ved forskellige aktiviteter.</p>
                 </div>
                 <div class="card-action white-text">
-                    <span class="card-title">Samlet forbrug: <span id="result">0</span></span>
+                    <span class="card-title">Samlet antal kalorier: <span id="result">0</span> kcal</span>
                 </div>
                 <div class="card-action">
 
@@ -33,21 +33,20 @@
                         <form class="col s12">
                           <div class="row">
                             <div class="input-field col s12">
-                              <input placeholder="Indtast kilometer" id="kilometers" type="number" class="validate white-text">
-                              <label for="kilometers">Antal kilometer</label>
+                              <input placeholder="Indtast timer" id="hours" type="number" class="validate white-text">
+                              <label for="hours">Antal timer</label>
                             </div>
                           </div>
                           <div class="row">
                             <div class="input-field col s12">
-                                <select name="vehicle" id="vehicle" class="white-text">
-                                  <option value="bike" >Cykel</option>
-                                  <option value="bus">Bus</option>
-                                  <option value="train">Tog</option>
-                                  <option value="car">Bil</option>
-                                  <option value="boat">Færge</option>
-                                  <option value="plain">Fly</option>
+
+                                <select name="type" id="type" class="white-text">
+                                  <option value="walk">Almindelig gang</option>
+                                  <option value="walkdownstairs">Gang ned af trapper</option>
+                                  <option value="walkupstairs">Gang op af trapper</option>
                                 </select>
-                                <label for="vehicle">Vælg transport type:</label>
+                                
+                                <label for="type">Vælg aktivitet:</label>
                             </div>
                           </div>
                           <div class="row">
@@ -69,44 +68,50 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
+
+        function calculate(form) {
+            let hours = document.getElementById('hours').value;
+            let type = document.getElementById('type').value;
+            let result = (hours * getUnit(type));
+            document.getElementById('result').innerText = result;
+        }
+
+        function getUnit(type) {
+            switch(type.toUpperCase()) {
+                case "WALK":
+                    return 215;
+                    break;
+                case "WALKDOWNSTAIRS":
+                    return 414;
+                    break;
+                case "WALKUPSTAIRS":
+                    return 1079;
+                    break;
+            }
+        }
+
+/*            
+215	Almindelig gang
+414	Gang ned af trapper
+1079	Gang op af trapper
+192	Personlig hygiejne, herunder påklædning og bad
+281	Slå græs med manuel græsslåmaskine
+236	Lave mad og redde senge
+362	Luge ukrudt
+481	Rydde sne
+111	Sidde og snakke eller skrive
+74	Læse eller se TV
+89	Stå oprejst
+310	Cykling i roligt tempo
+163	Tørre støv af
+281	Vaske gulv
+259	Pudse vinduer            
+*/
         document.addEventListener('DOMContentLoaded', function() {
             var elems = document.querySelectorAll('select');
             var instances = M.FormSelect.init(elems);
         });
 
-        function calculate(form) {
-            const kilometers = form.kilometers.value;
-            const vehicle = form.vehicle.value;
-            const co2unit = getCo2Unit(vehicle);
-
-            console.log(co2unit);
-
-            document.getElementById('result').innerText = (kilometers*co2unit) + ' g';
-
-        }
-
-        function getCo2Unit(vehicle) {
-            switch(vehicle.toUpperCase()) {
-                case "BIKE":
-                    return 0;
-                    break;
-                case "BUS":
-                    return 27;
-                    break;
-                case "TRAIN":
-                    return 37;
-                    break;
-                case "CAR":
-                    return 160;
-                    break;
-                case "BOAT":
-                    return 170;
-                    break;
-                case "PLAIN":
-                    return 223;
-                    break;
-            }
-        }
     </script>
 </body>
 </html>
