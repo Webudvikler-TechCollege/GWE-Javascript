@@ -1,9 +1,19 @@
-let header = document.getElementById('mainheader');
+let header = document.querySelector('.header-main');
+let affix = document.querySelector('.header-affix');
+
+setNav();
 
 window.onscroll = function() {
-   if(window.pageYOffset > 0) {
-       header.classList.add('sticky');
-   } else {
-       header.classList.remove('sticky');
-   }
+    setNav();
 };
+
+function setNav() {
+    if(window.pageYOffset > 0) {
+        affix.innerHTML = header.innerHTML;
+        affix.classList.add('sticky');
+        header.classList.add('hide');
+    } else {
+        affix.classList.remove('sticky');
+        header.classList.remove('hide');
+    }
+}
