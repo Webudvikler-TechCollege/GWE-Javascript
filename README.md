@@ -1,2 +1,3 @@
-# Javascript-GF2-2019
-Introduktion til javascript
+# GWE Javascript
+
+Guides, eksempler, projekter og code follows til javascript på grundforløb.
