@@ -7,26 +7,23 @@
 </head>
 <body>
 
-    <button id="bluebtn">Blå</button>
-    <button id="redbtn">Rød</button>
-    <button id="resetbtn">Nulstil</button>
+    <button class="btn" name="blue">Blå</button>
+    <button class="btn" name="red">Rød</button>
+    <button class="btn" name="green">Grøn</button>
+    <button class="btn" name="yellow">Gul</button>
+    <button class="btn" name="purple">Lilla</button>
+    <button class="btn" name="#567322">Custom</button>
+    <button class="btn" name="transparent">Nulstil</button>
 
     <script>
-       const bluebtn = document.querySelector('#bluebtn');
-       const redbtn = document.querySelector('#redbtn');
-       const resetbtn = document.querySelector('#resetbtn');
+        const buttons = document.querySelectorAll('.btn');
 
-       bluebtn.addEventListener('click', function() {
-           document.body.style.backgroundColor = '#00F';
-       })
+        for(let btn of buttons) {
+            btn.addEventListener('click', function() {
+                document.body.style.backgroundColor = this.name;
+            })   
+        }
 
-       redbtn.addEventListener('click', function() {
-           document.body.style.backgroundColor = '#F00';
-       })
-
-       resetbtn.addEventListener('click', function() {
-           document.body.style.backgroundColor = 'transparent';
-       })
     </script>
 </body>
 </html>
