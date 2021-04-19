@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button id="bluebtn">Blå</button>
+    <button id="redbtn">Rød</button>
+    <button id="resetbtn">Nulstil</button>
+
+    <script>
+       const bluebtn = document.querySelector('#bluebtn');
+       const redbtn = document.querySelector('#redbtn');
+       const resetbtn = document.querySelector('#resetbtn');
+
+       bluebtn.addEventListener('click', function() {
+           document.body.style.backgroundColor = '#00F';
+       })
+
+       redbtn.addEventListener('click', function() {
+           document.body.style.backgroundColor = '#F00';
+       })
+
+       resetbtn.addEventListener('click', function() {
+           document.body.style.backgroundColor = 'transparent';
+       })
+    </script>
+</body>
+</html>
