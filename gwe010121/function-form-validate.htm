@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Functions - Form Validering</title>
     <script src="function-form-validate.js"></script>
+    <style>
+        #messageWrapper {
+            margin: 10px 0px;
+            color: red;
+        }
+    </style>
 </head>
 <body>
     <form>
@@ -19,7 +25,8 @@
                 <input type="text" name="email" id="email">
             </div>
             <div>
-                <button type="button">Tilmeld</button>
+                <div id="messagewrapper"></div>
+                <button type="button" onClick="formValidate(this.form)">Tilmeld</button>
             </div>
         </fieldset>
     </form>
