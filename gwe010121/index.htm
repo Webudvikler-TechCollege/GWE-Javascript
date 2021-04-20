@@ -3,10 +3,99 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Javascript Session 1</title>
-    <script src="script.js"></script>
+    <title>Javascript Tester</title>
+    <script>
+
+
+let x = 2999;
+let kommune = x;
+
+if (x >= 1000 && x < 3000) {
+    kommune = "Københavns Kommune, Frederiksberg og omegn"
+}
+else if (x >= 3000 && x < 3700) {
+    kommune = "Nordsjælland"
+}
+else if (x >= 3700 && x < 3800) {
+    kommune = "Bornholm"
+}
+else if (x >= 3800 && x < 3900) {
+    kommune = "Færøerne"
+}
+else if (x >= 3900 && x < 4000) {
+    kommune = "Grønland"
+}
+else if (x >= 4000 && x < 5000) {
+    kommune = "Østsjælland, Midt- og Vestsjælland, Sydsjælland, Lolland-Falster og Møn"
+}
+else if (x >= 5000 && x < 6000) {
+    kommune = "Fyn og øerne"
+}
+else if (x >= 6000 && x < 7000) {
+    kommune = "Sønderjylland"
+}
+else if (x >= 7000 && x < 8000) {
+    kommune = "Midtjylland"
+}
+else if (x >= 8000 && x < 9000) {
+    kommune = "Østjylland"
+}
+else if (x = x >= 9000 && x < 10000) {
+    kommune = "Nordjylland"
+}
+else{
+    kommune = "ikke fundet"
+}
+
+console.log(kommune);
+
+
+
+let region = kommune;
+let zips = "";
+
+switch (region) {
+    case "Københavns Kommune, Frederiksberg og omegn":
+        zips = "1000-2999"
+        break;
+    case "Nordsjælland":
+        zips = "3000-3699"
+        break;
+    case "Bornholm":
+        zips = "3700-3799"
+        break;
+    case "Færøerne":
+        zips = "3800-3899"
+        break;
+    case "Grønland":
+        zips = "3900-3999"
+        break;
+    case "Østsjælland, Midt- og Vestsjælland, Sydsjælland, Lolland-Falster og Møn":
+        zips = "4000-4999"
+        break;
+    case "Fyn og øerne":
+        zips = "5000-5999"
+        break;
+    case "Sønderjylland":
+        zips = "6000-6999"
+        break;
+    case "Midtjylland":
+        zips = "7000-7999"
+        break;
+    case "Østjylland":
+        zips = "8000-8999"
+        break;
+    case "Nordjylland":
+        zips = "9000-9999"
+        break;
+}
+
+
+console.log(zips);
+
+    </script>
 </head>
 <body>
-    <p>Hej hej</p>
+
 </body>
 </html>
