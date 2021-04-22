@@ -3,8 +3,9 @@ function formValidate(form) {
     let status = true;
 
     if(!form.fullname.value) {
-        messageWrapper.innerText = 'Du skal udfylde feltet navn';
+        //messageWrapper.innerText = 'Du skal udfylde feltet navn';
         form.fullname.classList.add('error');
+        form.fullname.insertAdjacentHTML("afterbegin", `<span>Du skal udfylde feltet navn</span>`);
         status = false;
         return false;
     } else if(!isValidAlpha(form.fullname.value)) {
