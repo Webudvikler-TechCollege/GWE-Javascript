@@ -4,6 +4,7 @@ function formValidate(form) {
 
     if(!form.fullname.value) {
         messageWrapper.innerText = 'Du skal udfylde feltet navn';
+        form.fullname.classList.add('error');
         status = false;
         return false;
     } else if(!isValidAlpha(form.fullname.value)) {
