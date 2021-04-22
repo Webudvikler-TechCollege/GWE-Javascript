@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p class="info">1. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas exercitationem veniam nulla quibusdam numquam omnis deleniti! Earum aspernatur ipsam quibusdam, ipsa tempore cumque est, ratione sed voluptatum iste voluptate eveniet.</p>
+    <p>2. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas exercitationem veniam nulla quibusdam numquam omnis deleniti! Earum aspernatur ipsam quibusdam, ipsa tempore cumque est, ratione sed voluptatum iste voluptate eveniet.</p>
+    <p class="info">3. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas exercitationem veniam nulla quibusdam numquam omnis deleniti! Earum aspernatur ipsam quibusdam, ipsa tempore cumque est, ratione sed voluptatum iste voluptate eveniet.</p>
+    <p>4. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas exercitationem veniam nulla quibusdam numquam omnis deleniti! Earum aspernatur ipsam quibusdam, ipsa tempore cumque est, ratione sed voluptatum iste voluptate eveniet.</p>
+    <p class="info">5. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas exercitationem veniam nulla quibusdam numquam omnis deleniti! Earum aspernatur ipsam quibusdam, ipsa tempore cumque est, ratione sed voluptatum iste voluptate eveniet.</p>
+    
+
+
+    <script>
+        let list_from_tagname = document.getElementsByTagName('p');
+        let list_from_classname = document.getElementsByClassName('p');
+        let list_from_queryselector = document.querySelectorAll('.info');
+
+        for(let item of list_from_tagname) {
+            console.log(item);
+        }
+
+        console.log(list);
+
+        let arr_items = ["Volvo", "Opel", "Citroén"];
+
+        for(let item of arr_items) {
+            console.log(item);
+        }
+        
+        console.log(arr_items);
+
+    </script>
+</body>
+</html>
