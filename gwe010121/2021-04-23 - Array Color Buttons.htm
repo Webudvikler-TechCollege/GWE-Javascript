@@ -6,12 +6,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #colorwrapper {
+            border: solid 1px #000;
+            width: 300px;
+            height: 200px;
+        }
+
+        .red { background-color: red; }
+        .green { background-color: green; }
+        .purple { background-color: purple; }
+        .yellow { background-color: yellow; }
+        .blue { background-color: blue; }
+
+    </style>
 </head>
 
 <body>
     <div id="buttonPanel"></div>
 
+    <div id="colorwrapper"></div>
+
     <script>
+        const colorwrapper = document.getElementById('colorwrapper');
+
         const arrColors = [
             ['red', 'Rød'], 
             ['yellow', 'Gul'], 
@@ -34,8 +52,9 @@
 
         for(let button of arrButtons) {
             button.onclick = function() {
-                //console.log(this.name);
-                document.body.style.backgroundColor = this.name;
+                colorwrapper.classList.remove(...colorwrapper.classList);
+                colorwrapper.classList.add(this.name);
+                //console.log(colorwrapper.classList.contains('red'));
             }
         }
 
