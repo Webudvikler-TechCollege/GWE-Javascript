@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="buttonPanel"></div>
+
+    <script>
+        const arrColors = [
+            ['red', 'Rød'], 
+            ['yellow', 'Gul'], 
+            ['blue', 'Blå'], 
+            ['green', 'Grøn'], 
+            ['purple', 'Lilla']
+        ];
+        //console.table(arrColors);
+
+        let accButtonHtml = '';
+
+        for (let arrColor of arrColors) {
+            accButtonHtml += `<button name="${arrColor[0]}">${arrColor[1]}</button>\n`;
+        }
+
+        document.getElementById('buttonPanel').innerHTML = accButtonHtml;
+
+        const arrButtons = document.querySelectorAll('button');
+        //console.log(arrButtons);
+
+        for(let button of arrButtons) {
+            button.onclick = function() {
+                //console.log(this.name);
+                document.body.style.backgroundColor = this.name;
+            }
+        }
+
+    </script>
+</body>
+
+</html>
