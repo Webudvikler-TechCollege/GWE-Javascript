@@ -44,7 +44,7 @@
         let accButtonHtml = '';
 
         for (let arrColor of arrColors) {
-            accButtonHtml += `<button name="${arrColor[0]}">${arrColor[1]}</button>\n`;
+            accButtonHtml += `<button id="${arrColor[0]}" name="${arrColor[0]}">${arrColor[1]}</button>\n`;
         }
 
         document.getElementById('buttonPanel').innerHTML = accButtonHtml;
