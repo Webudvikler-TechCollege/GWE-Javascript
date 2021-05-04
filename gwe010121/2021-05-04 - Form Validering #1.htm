@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,54 +14,58 @@
     <script>
         function validate(formElm) {
 
-            let state = true; 
-            
-            if(!formElm.name.value) {
-                if(!formElm.name.nextElementSibling) {
-                    formElm.name.insertAdjacentHTML('afterend', `<span class="errormessage">Du skal udfylde feltet</span>`)
+            let state = true;
+            const inputs = document.querySelectorAll(':required');
+
+            console.log(inputs);
+
+            for(let input of inputs) {
+                if(!input.value) {
+                    setError(input);
+                    state = false;
+                    return false;
                 }
-                formElm.name.focus();
-
-                formElm.addEventListener('keydown', function() {
-                    if(formElm.name.nextElementSibling) {
-                        formElm.name.nextElementSibling.remove();
-                    }
-                })
-
-                state = false;
-                return false;
             }
 
-            if(!formElm.email.value) {
-                alert('Du skal udfylde feltet email!');
-                formElm.email.focus();
-                state = false;
-                return false;
-            }
-            
-            if(state) {
+            if (state) {
                 alert('Formularen er sendt!');
             }
+        }
 
+        function setError(element) {
+            if (!element.nextElementSibling) {
+                element.insertAdjacentHTML('afterend', `<span class="errormessage">Du skal udfylde feltet</span>`);
+            }
+            element.addEventListener('keydown', function() {
+                if(element.nextElementSibling) {
+                    element.nextElementSibling.remove();
+                }
+            })
         }
     </script>
 </head>
+
 <body>
 
     <form>
         <div>
             <label for="name">Navn:</label>
-            <input type="text" id="name" placeholder="Indtast navn" />
+            <input type="text" id="name" required placeholder="Indtast navn" />
         </div>
         <div>
             <label for="email">Email:</label>
-            <input type="email" id="email" placeholder="Indtast email" />
+            <input type="email" id="email" required placeholder="Indtast email" />
+        </div>
+        <div>
+            <label for="address">Adresse:</label>
+            <input type="text" id="address" required placeholder="Indtast adresse" />
         </div>
         <div>
             <button type="button" onclick="validate(this.form)">Send</button>
             <button type="reset">Nulstil felter</button>
         </div>
-    </form>    
-    
+    </form>
+
 </body>
+
 </html>
