@@ -29,7 +29,13 @@
             }
 
             if (state) {
-                alert('Formularen er sendt!');
+                let div = document.createElement('div');
+                div.setAttribute('id','formmessage');
+                div.innerText = 'Formularen er sendt!';
+                for(let input of inputs) {
+                    input.value = '';
+                }
+                document.body.appendChild(div);
             }
         }
 
@@ -58,7 +64,7 @@
         </div>
         <div>
             <label for="email">Email</label>:
-            <input type="email" id="email" required placeholder="Indtast email" />
+            <input type="email" id="email"  placeholder="Indtast email" />
         </div>
         <div>
             <label for="address">Adresse</label>:
@@ -66,7 +72,7 @@
         </div>
         <div>
             <label for="zipcode">Postnummer</label>:
-            <input type="number" id="zipcode" required placeholder="Indtast postnummer" />
+            <input type="number" id="zipcode"  placeholder="Indtast postnummer" />
         </div>
         <div>
             <button type="button" onclick="validate(this.form)">Send</button>
