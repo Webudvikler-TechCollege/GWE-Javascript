@@ -1,0 +1,45 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/assets/sass/master.css">
+    <title>Form Validering - Øvet</title>
+</head>
+<body>
+    <h1>Form Validering - HTML Validering med patterns</h1>
+    <form>
+        <fieldset>
+            <div>
+                <!-- Skal minimum bestå af en karakter og kan kun indeholde bogstaver og mellemrum -->
+                <label for="firstname">Fornavn:</label>
+                <input type="text" required="true" pattern="[A-Za-z ]{1,}" name="firstname" id="firstname">
+            </div>    
+            <div>
+                <!-- Skal minimum bestå af en karakter og kan kun indeholde bogstaver og mellemrum -->
+                <label for="lastname">Efternavn:</label>
+                <input type="text" required="true" pattern="[A-Za-z ]{1,}" name="lastname" id="lastname">
+            </div>
+            <div>
+                <!-- Skal minimum bestå af en 8 sammenhængende tal -->
+                <label for="phone">Telefon:</label>
+                <input type="text" required="true" pattern="[0-9]{8}" name="phone" id="phone">
+            </div>
+            <div>
+                <!-- Skal minimum bestå af en 8 karakterer, et tal, et stort bogstav og et lille bogstav -->
+                <label for="password">Adgangskode:</label>
+                <input type="password" required="true" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" name="password" id="password" title="Din adgangskode skal minimum være på 8 karakterer og indeholde et tal, et stort bogstav og et symbol.">
+            </div>            
+            <div>
+                <label for="email">Email</label>
+                <input type="email" required="true" pattern="/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i" name="email" id="email">
+            </div>    
+            <div>
+                <button type="submit">Send</button>
+            </div>    
+        </fieldset>    
+    </form>
+    
+</body>
+</html>

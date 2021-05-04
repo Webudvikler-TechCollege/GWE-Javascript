@@ -1,0 +1,27 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.wrapper {
+    width: 60%;
+    margin: 5% auto;
+    padding: 30px;
+    border: solid 2px #ccc;
+    border-radius: 5px;
+}
+
+#amount {
+    width: 20%;
+}
+
+#currency {
+    width: 20%;
+    appearance: none;
+    padding: 10px;
+}

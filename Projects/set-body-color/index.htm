@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Javascript: Background colors:</h1>
+    <button type="button" id="blue">Blue</button>
+    <button type="button" id="red">Red</button>
+    <button type="button" id="green">Green</button>
+    <button type="button" id="black">Black</button>
+    <button type="button" id="white">White</button>
+    <button type="button" id="pink">Pink</button>
+    <button type="button" id="pink">Yellow</button>
+
+    <script id="code">
+        document.querySelectorAll("button").forEach( function(element) {
+            element.onclick = function() {
+                document.body.style.backgroundColor = element.textContent;
+            }
+        });
+
+
+
+
+
+        /*
+        document.getElementById('blue').onclick = function() {
+            document.body.style.backgroundColor = 'blue';
+        }
+        document.getElementById('red').onclick = function() {
+            document.body.style.backgroundColor = 'red';
+        } 
+        */       
+   </script>
+
+</body>
+</html>

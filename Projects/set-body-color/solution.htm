@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Javascript: Background colors:</h1>
+    <button type="button" name="blue">Blue</button>
+    <button type="button" name="red">Red</button>
+    <button type="button" name="green">Green</button>
+    <button type="button" name="black">Black</button>
+    <button type="button" name="white">White</button>
+    <button type="button" name="pink">Pink</button>
+
+    <script id="code">
+    document.querySelectorAll("button").forEach( function(element) {
+        element.onclick = function() {
+            document.body.style.backgroundColor = element.textContent;
+        }
+    });
+    </script>
+
+</body>
+</html>

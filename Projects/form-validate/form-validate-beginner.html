@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/assets/sass/master.css">
+    <title>Form Validering - Begynder</title>
+</head>
+<body>
+    <h1>Form Validering - Begynder</h1>
+
+    <form>
+        <fieldset>
+            <div>
+                <label for="firstname">Fornavn:</label>
+                <input type="text" name="firstname" id="firstname">
+            </div>
+            <div>
+                <label for="lastname">Efternavn:</label>
+                <input type="text" name="lastname" id="lastname">
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email">
+            </div>
+            <div>
+                <label for="gender">Køn:</label>
+                <select name="gender" id="gender">
+                    <option value="">Vælg køn</option>
+                    <option value="f">Kvinde</option>
+                    <option value="m">Mand</option>
+                </select>
+            </div>
+            <div>
+                <label for="accept">Accepter:</label>
+                <input type="checkbox" name="accept" id="accept">
+            </div>
+            <div>
+                <button type="button" id="send" class="btn btn-success">Send</button>
+            </div>
+        </fieldset>
+    </form>
+    
+    <script src="form-validate-beginner.js"></script>
+</body>
+</html>

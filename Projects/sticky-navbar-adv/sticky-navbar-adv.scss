@@ -1,0 +1,89 @@
+$bgcolor: #111;
+$bgcolor-dark: #300;
+$linkcolor: #f2f2f2;
+
+@mixin font($font, $size, $color) {
+    font-family: $font;
+    font-size: $size;
+    color: $color;
+}
+
+@mixin transition($property) {
+    -webkit-transition: $property;
+    -moz-transition: $property;
+    transition: $property;
+}
+
+body {
+    background-color: #333;
+    @include font('Trebuchet MS', 1rem, #fff);
+}
+
+.header {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    background: $bgcolor;
+    display: block;
+    margin: 0;
+    padding: 0;
+    height: 120px;
+    box-sizing: border-box;
+    @include transition(all 0.4s ease);
+    a {
+        @include font(Verdana, 1.5rem, #fff);
+        margin-right: 1rem;
+        text-decoration: none;
+        @include transition(all 0.4s ease);
+        &:hover {
+            color: #fff;
+            text-shadow: 0px 0px 8px #fff;
+        }
+
+    }
+}
+
+/* Display: grid */
+.row {
+    display: flex;
+    align-items: center; 
+}
+
+
+figure {
+    @include transition(all 0.4s ease);
+    width: 180px;
+    float: left;
+}
+
+img {
+    width: 100%;
+}
+
+.sticky {
+    position: fixed;
+    background: $bgcolor-dark;
+    height: 70px;
+    top: 0;
+    a {
+        font-size: 1rem;
+        margin-right: 2rem;
+    }
+    figure {
+        @include transition(all 0.4s ease);
+        width: 70px;
+    }
+}
+
+ /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+ .header + main {
+    padding-top: 100px;
+  }
+
+  main {    
+    max-width: 800px;
+    width: 100%;
+    margin: 20px auto 0 auto;
+    height: 1000px;
+  }

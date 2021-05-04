@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/assets/sass/master.css">
+    <title>Form Validering - Ekspert</title>
+</head>
+<body>
+<h1>Form Validering - Ekspert</h1>
+<form id="contactform" method="POST">
+    <fieldset>
+        <legend>Øvelse med simpel form validering</legend>
+        <label for="firstname">Fornavn</label>
+        <input required data-validate="onlyalpha" type="text" name="firstname" id="firstname" placeholder="Indtast dit fornavn" value="" /><br />
+        <label for="lastname">Efternavn</label>
+        <input required data-validate="onlyalpha" type="text" name="lastname" id="lastname" placeholder="Indtast dit efternavn" value="" /><br />
+        <label for="email">Email</label>
+        <input required data-validate="validemail" type="email" name="email" id="email" placeholder="Indtast din email" value="" /><br />
+        <label for="email">Telefon</label>
+        <input required  data-validate="onlynum" type="text" name="phone" id="phone" placeholder="Indtast dit telefonnummer" value="" /><br />
+        <label for="comment">Kommentar</label>
+        <textarea required name="comment" id="comment" placeholder="Indtast kommentar"></textarea>
+        <label for="accept">Jeg accepterer:</label>
+        <input required type="checkbox" name="accept" id="accept"><br>
+        <button type="button" onclick="validate(this.form)">Vis input</button>
+    </fieldset>
+</form>
+
+<script src="form-validate-advanced.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validering</title>
+    <style>
+        .errormessage {
+            color: red;
+        }
+    </style>
+    <script>
+        function validate(formElm) {
+
+            let state = true; 
+            
+            if(!formElm.name.value) {
+                if(!formElm.name.nextElementSibling) {
+                    formElm.name.insertAdjacentHTML('afterend', `<span class="errormessage">Du skal udfylde feltet</span>`)
+                }
+                formElm.name.focus();
+
+                formElm.addEventListener('keydown', function() {
+                    if(formElm.name.nextElementSibling) {
+                        formElm.name.nextElementSibling.remove();
+                    }
+                })
+
+                state = false;
+                return false;
+            }
+
+            if(!formElm.email.value) {
+                alert('Du skal udfylde feltet email!');
+                formElm.email.focus();
+                state = false;
+                return false;
+            }
+            
+            if(state) {
+                alert('Formularen er sendt!');
+            }
+
+        }
+    </script>
+</head>
+<body>
+
+    <form>
+        <div>
+            <label for="name">Navn:</label>
+            <input type="text" id="name" placeholder="Indtast navn" />
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Indtast email" />
+        </div>
+        <div>
+            <button type="button" onclick="validate(this.form)">Send</button>
+            <button type="reset">Nulstil felter</button>
+        </div>
+    </form>    
+    
+</body>
+</html>

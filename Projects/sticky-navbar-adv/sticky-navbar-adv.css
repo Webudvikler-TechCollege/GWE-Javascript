@@ -1,0 +1,89 @@
+body {
+  background-color: #333;
+  font-family: "Trebuchet MS";
+  font-size: 1rem;
+  color: #fff;
+}
+
+.header {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  background: #111;
+  display: block;
+  margin: 0;
+  padding: 0;
+  height: 120px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.header a {
+  font-family: Verdana;
+  font-size: 1.5rem;
+  color: #fff;
+  margin-right: 1rem;
+  text-decoration: none;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.header a:hover {
+  color: #fff;
+  text-shadow: 0px 0px 8px #fff;
+}
+
+/* Display: grid */
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+figure {
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  width: 180px;
+  float: left;
+}
+
+img {
+  width: 100%;
+}
+
+.sticky {
+  position: fixed;
+  background: #300;
+  height: 70px;
+  top: 0;
+}
+
+.sticky a {
+  font-size: 1rem;
+  margin-right: 2rem;
+}
+
+.sticky figure {
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  width: 70px;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.header + main {
+  padding-top: 100px;
+}
+
+main {
+  max-width: 800px;
+  width: 100%;
+  margin: 20px auto 0 auto;
+  height: 1000px;
+}
+/*# sourceMappingURL=sticky-navbar-adv.css.map */
