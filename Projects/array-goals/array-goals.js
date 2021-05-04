@@ -1,4 +1,3 @@
-
 const arrGoals = [
     { 
         goal: 1,
@@ -121,6 +120,10 @@ const arrGoals = [
     }
 ]
 
-console.log(arrGoals);
+for(let goal of arrGoals) {
+    
+}
+
+
 
 

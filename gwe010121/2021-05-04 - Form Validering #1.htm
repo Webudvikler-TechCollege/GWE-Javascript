@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Validering</title>
     <style>
+        .error {
+            border-color: red;
+        }
         .errormessage {
             color: red;
         }
@@ -16,8 +19,6 @@
 
             let state = true;
             const inputs = document.querySelectorAll(':required');
-
-            console.log(inputs);
 
             for(let input of inputs) {
                 if(!input.value) {
@@ -33,13 +34,16 @@
         }
 
         function setError(element) {
+            element.classList.add('error');
             if (!element.nextElementSibling) {
-                element.insertAdjacentHTML('afterend', `<span class="errormessage">Du skal udfylde feltet</span>`);
+                let strError = `<span class="errormessage">Du skal udfylde feltet ${element.previousElementSibling.innerText.toLowerCase()}</span>`;
+                element.insertAdjacentHTML('afterend', strError);
             }
             element.addEventListener('keydown', function() {
                 if(element.nextElementSibling) {
                     element.nextElementSibling.remove();
                 }
+                element.classList.remove('error');
             })
         }
     </script>
@@ -49,16 +53,20 @@
 
     <form>
         <div>
-            <label for="name">Navn:</label>
+            <label for="name">Navn</label>:
             <input type="text" id="name" required placeholder="Indtast navn" />
         </div>
         <div>
-            <label for="email">Email:</label>
+            <label for="email">Email</label>:
             <input type="email" id="email" required placeholder="Indtast email" />
         </div>
         <div>
-            <label for="address">Adresse:</label>
-            <input type="text" id="address" required placeholder="Indtast adresse" />
+            <label for="address">Adresse</label>:
+            <input type="text" id="address" placeholder="Indtast adresse" />
+        </div>
+        <div>
+            <label for="zipcode">Postnummer</label>:
+            <input type="number" id="zipcode" required placeholder="Indtast postnummer" />
         </div>
         <div>
             <button type="button" onclick="validate(this.form)">Send</button>
