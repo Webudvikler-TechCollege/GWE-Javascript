@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Validering</title>
+    <script src="../assets/js/regex.js"></script>
     <style>
         .error {
             border-color: red;
@@ -28,13 +29,27 @@
             for(let input of inputs) {
                 // Hvis input feltets value ikke eksisterer...
                 if(!input.value) {
-                    // Kalder setError funktion på input elementet
-                    setError(input);
+                    // Sætter var med fejlbesked og og bruger innerText fra elementets foregående sibling (label elementet)
+                    let strError = `Du skal udfylde feltet ${element.previousElementSibling.innerText.toLowerCase()}`;
+                    // Kalder setError funktion på med input element
+                    setError(input, strError);
                     // Sætter state til false
                     state = false;
                     // Afbryder validate funktionen med return false
                     return false;
                 }
+
+                // Hvis input type er email...
+                if(input.type === 'email') {
+                    // bruger regex funktion til at tjekke email syntaks
+                    if(!isValidEmail(input.value)) {
+                        // Kalder setError funktion med input element og speciel fejl besked
+                        setError(input, 'Du skal indtaste en gyldig email adresse');
+                        state = false;
+                        return false;
+                    }
+                }
+
             }
 
             // Hvis state er true (er alle inputs korrekt udfyldt)
@@ -45,26 +60,21 @@
                 div.setAttribute('id','formmessage');
                 // Sætter innerText i div elementet
                 div.innerText = 'Formularen er sendt!';
-                // Tilføjer div element som sidste child element i body elementet
-                document.body.appendChild(div);
-
-                // Looper inputs array og nulstiller values
-                for(let input of inputs) {
-                    input.value = '';
-                }
-
+                // Sætter konstant med element som har id'et main
+                const main = document.getElementById('main');
+                // Tilføjer div element som sidste child element i main elementet
+                main.appendChild(div);
             }
         }
 
-        // Function definition - tager input element som parameter
-        function setError(element) {
+        // Function definition - tager input element og tekstbesked med standardværdi som parameter
+        function setError(element, message) {
             // Tilføjer klasse til input elementet (rød border)
             element.classList.add('error');
             // Hvis elementet IKKE har en efterfølgende sibling...
             if (!element.nextElementSibling) {
-                // Deklarerer var til html output (span element) med fejlnmeddelelse 
-                // Strengen bruger innerText fra elementets foregående siblings (label elementet)
-                let strError = `<span class="errormessage">Du skal udfylde feltet ${element.previousElementSibling.innerText.toLowerCase()}</span>`;
+                // Deklarerer var til html output (span element) med fejlmeddelelse 
+                let strError = `<span class="errormessage">${message}</span>`;
                 // Indsætter html efter input elementets afslutning 
                 element.insertAdjacentHTML('afterend', strError);
             }
@@ -84,7 +94,6 @@
 </head>
 
 <body>
-
     <form>
         <!-- 
             Hvert input element skal ligge i den følgende orden:
@@ -100,7 +109,7 @@
         </div>
         <div>
             <label for="email">Email</label>:
-            <input type="email" id="email"  placeholder="Indtast email" />
+            <input type="email" id="email"  required placeholder="Indtast email" />
         </div>
         <div>
             <label for="address">Adresse</label>:
@@ -119,6 +128,10 @@
             <button type="reset">Nulstil felter</button>
         </div>
     </form>
+
+    <div id="main">
+    </div>
+
 
 </body>
 
