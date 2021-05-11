@@ -193,13 +193,13 @@
 
         // Lopper arrGoals og sætter var goal til mål objekt
         for (let goal of arrGoals) {
-            //
+            // Sætter var file til filsti + filnavn til billede 
             let file = `/assets/images/17goals/${goal.image}`;
             // Opretter div element til de enkelte mål
             let figure = document.createElement('figure');
             // OPretter image element for hver enkelte mål 
             let image = document.createElement('img');
-            // Sætter srcf attribut på billeder til filsti + mål billede
+            // Sætter src attribut med var file
             image.setAttribute('src', file);
             // Sætter title på mål billede
             image.setAttribute('title', `${goal.title_dk}`);
