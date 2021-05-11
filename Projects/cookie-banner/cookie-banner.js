@@ -5,33 +5,45 @@
  * det.
  */
 
- if(!localStorage.acceptCookie) {
-   //Bygger div tags med cookie banner, text og knappe til accept
-   const banner = document.createElement('div'); 
-   banner.setAttribute('class', 'cookie-banner');
+if (!localStorage.acceptCookie) {
+  // Opretter section element med class attribut
+  const cookieBanner = document.createElement('section');
+  cookieBanner.setAttribute('class', 'cookie-banner');
 
-   const container = document.createElement('div'); //Indre div
-   container.setAttribute('class', 'cookie-container');
+  // Opretter div element med class attribut
+  const cookieContent = document.createElement('div'); //Indre div
+  cookieContent.setAttribute('class', 'cookie-container');
 
-   container.innerHTML = `
-          <p><b>COOKIE INFORMATION</b></p>
-          <p>På vores website bruges cookies til at huske dine indstillinger, 
+  // Opretter h3 delement med innerText
+  const cookieHeader = document.createElement('h3');
+  cookieHeader.innerText = 'COOKIE INFORMATION';
+
+  // Opretter paragraph med brødtekst i template string (``)
+  const cookieText = document.createElement('p');
+  cookieText.innerHTML = `På vores website bruges cookies til at huske dine indstillinger, 
           statistik og personalisering af indhold og annoncer. Denne information 
           deles med tredjepart. Ved fortsat brug af websiden godkender du cookiepolitikken.</p>
-          <button id="cookie-accept">OK</button>`;      
-    banner.appendChild(container);
-    document.body.prepend(banner);
+          <button id="cookie-accept">OK</button>`;
 
-    //Henter accept knap 
-    const button = document.querySelector('#cookie-accept');
-    //Sætter click event på knap
-    button.onclick = () => {
-      //Sætter 'cookie' i localStorage
-      localStorage.setItem("acceptCookie", true);
-      //Fjerner banner
-      document.querySelector('.cookie-banner').style.display = 'none';
+  // Tilføjer H3 til div element
+  cookieContent.appendChild(cookieHeader);
+  // Tilføjer paragraph til div element
+  cookieContent.appendChild(cookieText);
+  // Tilføjer div element til section element
+  cookieBanner.appendChild(cookieContent);
+  // Tilføjer section element til body element
+  document.body.prepend(cookieBanner);
 
-    }
- }
+  //Henter accept knap 
+  const button = document.querySelector('#cookie-accept');
+  //Sætter click event på knap
+  button.onclick = () => {
+    //Sætter 'cookie' i localStorage
+    localStorage.setItem("acceptCookie", true);
+    //Fjerner banner
+    document.querySelector('.cookie-banner').style.display = 'none';
+
+  }
+}
 
 

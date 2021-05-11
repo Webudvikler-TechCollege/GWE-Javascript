@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galleri med de 17 verdensmål og modal</title>
+    <script src="/assets/js/data.js" defer></script>
+    <style>
+        #goalwrapper {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #goalwrapper img {
+            width: 100%;
+            max-width: 200px;
+            cursor: pointer;
+        }
+
+        #modal {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none;
+        }
+
+        .modal-content {
+            width: 40%;
+            margin: 5% 25%;
+            height: 80%;
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+
+        .close {
+            float: right;
+            font-weight: bold;
+            color: #fff;
+            font-size: 2rem;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+        </div>
+    </div>
+
+    <script>
+
+        console.log(arrImages);
+
+        // Sætter var med modal element 
+        let modal = document.getElementById('modal');
+        // Sætter var med modal close button
+        let close = document.querySelector('.close');
+
+        // Opretter div element til galleri
+        let div = document.createElement('div');
+        // Sætter id på div element
+        div.setAttribute('id', 'goalwrapper');
+
+        // Lopper arrGoals og sætter var goal til mål objekt
+        for (let image of arrImages) {
+            let path_to_file = `/assets/images/gallery/${image.file}`;
+
+            // Opretter div element til de enkelte mål
+            let galleryDiv = document.createElement('div');
+            // OPretter image element for hver enkelte mål 
+            let galleryImg = document.createElement('img');
+            // Sætter srcf attribut på billeder til filsti + mål billede
+            galleryImg.setAttribute('src', path_to_file);
+            // Sætter title på mål billede
+            galleryImg.setAttribute('title', `${goal.title_dk}`);
+            // Sætter click event på billede
+            galleryImg.onclick = function () {
+                // Kalder modal funktion med billede som argument
+                showModal(path_to_file)
+            };
+            // Tilføjer image element som sidste child på div element (mål)
+            galleryDiv.appendChild(galleryImg);
+            // Tilføjer div element (mål) som sidste child på div element (alle mål)
+            div.appendChild(galleryDiv);
+        }
+
+        // Function der kan vise modal element med billede
+        function showModal(img) {
+            // Sætter baggrundsbillede på modal elementet første child 
+            modal.children[0].style.backgroundImage = `url('${img}')`;
+            // Gør modal elementet synlig
+            modal.style.display = 'block';
+        }
+
+        // Funktion til at lukke modal elementet med
+        function closeModal() {
+            // Skjuler modal element
+            modal.style.display = 'none';
+        }
+
+        // Sætter click event på close knap (X)
+        close.onclick = function () { closeModal(); }
+
+        // Sætter click event på browser vindue
+        window.onclick = function (event) {
+            // Hvis click område er modal (og ikke billede)
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        // Tilføjer div med mål liste i starten af body element
+        document.body.prepend(div);
+
+    </script>
+</body>
+
+</html>
