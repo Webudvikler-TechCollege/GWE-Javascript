@@ -1,4 +1,5 @@
-  
+// Eksempler Maj 2021
+
 /**
  * Eksempel 1
  * Tilføjer/fjerner en css klasse med større skrifttype til alle elementer
@@ -34,7 +35,7 @@ document.getElementById("example2").onclick = function() {
 };
 
 /**
- * Eksempel 3
+ * Eksempel 1
  * Her kommer dine egne scripts til resten af knapperne...
  */
 document.getElementById('ex1').onclick = function() {
@@ -45,3 +46,26 @@ document.getElementById('ex1').onclick = function() {
         h1.innerText = 'Javascript - Fri Opgave - DOM Manipulation';
     }
 }
+
+/**
+ * Eksempel 2
+ * Farver alle paragraffer røde
+ */
+document.getElementById('ex2').onclick = function() {
+    const arrParagraphs = document.getElementsByTagName('p');
+    for(let p of arrParagraphs) {
+        p.classList.toggle('tx-color-red');
+    }
+}
+
+/**
+ * Eksempel 3
+ * Roter alle li tags
+ */
+document.getElementById('ex3').onclick = function() {
+    const elements = document.querySelectorAll('li');
+    for(let li of elements) {
+        li.classList.toggle('tx-rotate');
+    }
+}
+
