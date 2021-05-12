@@ -5,7 +5,7 @@
  * det.
  */
 
-if (!localStorage.acceptCookie) {
+if(!localStorage.acceptCookie) {
   // Opretter section element med class attribut
   const cookieBanner = document.createElement('section');
   cookieBanner.setAttribute('class', 'cookie-banner');
@@ -37,7 +37,7 @@ if (!localStorage.acceptCookie) {
   //Henter accept knap 
   const button = document.querySelector('#cookie-accept');
   //Sætter click event på knap
-  button.onclick = () => {
+  button.onclick = function() {
     //Sætter 'cookie' i localStorage
     localStorage.setItem("acceptCookie", true);
     //Fjerner banner
