@@ -39,13 +39,14 @@ document.getElementById("example2").onclick = function () {
  * Skift indhold på h1 tag
  */
 document.getElementById('ex1').onclick = function () {
+    let std_text = 'Javascript - Fri Opgave - DOM Manipulation';
     // Sætter konstant med h1 element
     const h1 = document.querySelector('h1');
     // Skifter (toggler) mellem ny tekst og den oprindelige tekst
-    if (h1.innerText === 'Javascript - Fri Opgave - DOM Manipulation') {
+    if (h1.innerText === std_text) {
         h1.innerText = 'Testing 1234';
     } else {
-        h1.innerText = 'Javascript - Fri Opgave - DOM Manipulation';
+        h1.innerText = std_text;
     }
 }
 
@@ -71,9 +72,9 @@ document.getElementById('ex3').onclick = function () {
     // Sætter konstant med liste af alle li elementer
     const elements = document.querySelectorAll('li');
     // Looper listen
-    for (let li of elements) {
+    for (let element of elements) {
         // Skifter (toggler) css klasse på elementerne
-        li.classList.toggle('tx-rotate');
+        element.classList.toggle('tx-rotate');
     }
 }
 
@@ -142,7 +143,7 @@ document.getElementById('ex6').onclick = function () {
  */
 document.getElementById('ex7').onclick = function () {
     // Sætter konsant med liste af hver anden li element
-    const elements = document.querySelectorAll('li:nth-child(even)');
+    const elements = document.querySelectorAll('li:nth-child(odd)');
     // Looper listen
     for (let li of elements) {
         // Skifter css klasse på elementer
