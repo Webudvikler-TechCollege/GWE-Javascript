@@ -5,17 +5,21 @@
     font-family: 'MS Trebuchet', sans-serif;
 }
 
+body {
+    background-size: 100%;
+}
+
 .cookie-banner {
     position: absolute;
     bottom: 0px;
     width: 100%;
-    height: 100px;
+    height: 300px;            
     background-color: #000;
-    opacity: 0.8;     
+    opacity: 0.8;
 }
 
 .cookie-container {
-    margin: 1% auto;
+    margin: 5% auto;
     width: 70%;
     color: white;
 }
@@ -29,4 +33,3 @@ button {
     padding: 3px;
     width: 60px;
 }
-

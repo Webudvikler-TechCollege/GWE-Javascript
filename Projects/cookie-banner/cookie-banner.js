@@ -4,6 +4,10 @@
  * af cookies og fjerne banneret når en bruger har accepteret 
  * det.
  */
+const arrImages = getImageArray();
+console.log(arrImages[Math.floor(Math.random() * arrImages.length)]);
+let file = '/assets/images/gallery/' + arrImages[Math.floor(Math.random() * arrImages.length)].file;
+document.body.style.backgroundImage = `url(${file})`;
 
 if(!localStorage.acceptCookie) {
   // Opretter section element med class attribut
