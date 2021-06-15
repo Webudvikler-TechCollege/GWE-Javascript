@@ -14,18 +14,27 @@
     </form>
 
     <script>
+        // Henter form element ud fra id
         let form = document.getElementById('myForm');
+        // Sætter var status til true
         let status = true;
         
+        // Hvis form bliver submitted...
         form.onsubmit = function(e) {
+            // Annuller standard handling
             e.preventDefault();
 
+            // Hvis værdi af #fullname er falsk (this er lig med form der submittes)
             if(!this.fullname.value) {
+                // Fejl besked
                 alert('Du skal udfylde feltet!');
+                // Sæt status til false
                 status = false;            
             }
 
+            // Hvis status er sand
             if(status) {
+                // Submit form
                 this.submit();
             }
         }        
