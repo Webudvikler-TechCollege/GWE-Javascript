@@ -8,14 +8,13 @@
 
 </body>
 
-
-
-
     <script>
+        // Deklarer variabel til postnummer (zipcode)
         let zipcode = 5690;
+        // Deklarer variabel til distrikt
         let district;
 
-        // Eksempel på anvendelse af if-else statement med AND operator
+        // Eksempel på anvendelse af if-else statement med AND operator (&&)
         if(zipcode > 999 && zipcode < 5000) {
             district = "Sjælland, Lolland-Falster & Møn";
         } else if(zipcode > 4999 && zipcode < 6000) {
@@ -24,9 +23,14 @@
             district = "Jylland";
         }
 
+        // Eksempel på anvendelse af if-else statement med OR operator (||)
         if(zipcode === 9000 || zipcode === 9210) {
             city = "Aalborg";
         }
+
+        // Logger værdier med en template string
+        console.log(`Distrikt: ${district}`);
+        console.log(`By: ${city}`);
 
     </script>  
 </html>

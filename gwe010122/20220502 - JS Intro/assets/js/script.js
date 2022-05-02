@@ -1,15 +1,11 @@
-let x = document.createElement('div');
-x.setAttribute('class', 'myDiv')
-//console.dir(x);
-
 /**
- * Multiline comment
+ * Eksempel på en javascript fil
  */
-let firstname = "Brian"
-let lastname = "Jensen"
 
+// Udskriv en værdi i browserens udviklingskonsol
+console.log(1234);
 
-// Template string
-console.log(`<p class="myClass">${firstname} ${lastname}</p>`);
+// Prompt en meddelelse
+alert('Dette er en alert boks')
 
 
