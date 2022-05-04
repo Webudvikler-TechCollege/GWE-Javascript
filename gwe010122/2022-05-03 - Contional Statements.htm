@@ -1,0 +1,61 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script>
+		let x = 1;
+		let greeting;
+
+		if(x < 10) {
+			greeting = "Godmorgen"
+		} else if(x < 17) {
+			greeting = "Goddag"			
+		} else if(x < 22) {
+			greeting = "Godaften"			
+		} else {
+			greeting = "Godnat"
+		}
+
+		//console.log(greeting);
+
+		// Switch
+		const weekday = new Date().getDay();
+		let dayname;
+
+
+		switch(weekday) {
+			default:
+				dayname = 'Ikke defineret';
+				break;
+			case 0:
+				dayname = 'Søndag';
+				break;
+			case 1:
+				dayname = 'Mandag';
+				break;
+			case 2:
+				dayname = 'Tirsdag';
+				break;
+			case 3:
+				dayname = 'Onsdag';
+				break;
+			case 4:
+				dayname = 'Torsdag';
+				break;
+			case 5:
+				dayname = 'Fredag';
+				break;
+			case 6:
+				dayname = 'Lørdag';
+				break;
+		}
+
+		console.log(dayname);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
