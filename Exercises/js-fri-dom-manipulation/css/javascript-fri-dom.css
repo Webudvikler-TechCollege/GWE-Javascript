@@ -38,6 +38,7 @@ section {
 button {
     padding: 8px;
     border-radius: 3px;
+    cursor: pointer;
 }
 
 footer {

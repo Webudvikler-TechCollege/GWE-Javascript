@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Find by</title>
+</head>
+<body>
+	<form>
+		<fieldset>
+			<div>
+				<label for="zipcode">Postnummer</label>
+				<input type="text" id="zipcode" placeholder="Indtast postnummer">
+			</div>
+			<div>
+				<button type="button" id="submitZip">Hent by</button>
+			</div>
+
+		</fieldset>
+	</form>
+	<script>
+		const btn = document.getElementById('submitZip');
+
+		btn.addEventListener('click', function() {
+			const zipcode = document.getElementById('zipcode').value;
+			console.log(getRegion(parseInt(zipcode)));
+		})
+
+		function getRegion(zipcode) {
+			let region;
+			switch(true) {
+				default:
+					region = 'Ikke defineret'
+					break;
+				case (zipcode > 999 && zipcode < 3000):
+					region = 'Københavns Kommune, Frederiksberg og omegn'
+					break;
+				case (zipcode > 9000): 
+					region = 'Nordjylland'
+			}
+			return region;
+		}
+	</script>	
+</body>
+</html>

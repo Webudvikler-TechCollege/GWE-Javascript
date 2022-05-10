@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Form Validering</title>
+</head>
+<body>
+	<form>
+		<fieldset>
+			<div>
+				<label for="fullname">Fulde navn:</label>
+				<input type="text" id="fullname" placeholder="Indtast dit navn">
+			</div>
+			<div>
+				<label for="email">Email:</label>
+				<input type="email" id="email" placeholder="Indtast din email">
+			</div>
+			<div>
+				<button type="button" id="submitForm">Send</button>
+				<button type="reset">Nulstil felter</button>
+			</div>
+		</fieldset>
+	</form>
+
+	<script>
+		const btn = document.querySelector('#submitForm');
+
+		btn.addEventListener('click', function() {
+			if(!document.querySelector('#fullname').value) {
+				alert('Feltet Navn skal udfyldes');
+				document.querySelector('#fullname').focus();
+				return false;
+			}
+
+			if(!document.querySelector('#email').value) {
+				alert('Feltet Email skal udfyldes');
+				document.querySelector('#email').focus();
+				return false;
+			}
+
+			alert('Formularen blev sendt!')
+
+		})
+	</script>
+</body>
+</html>
