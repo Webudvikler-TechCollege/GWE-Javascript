@@ -1,0 +1,87 @@
+textarea, input[type=text], input[type=email], input[type=number], input[type=password], select {
+  border-radius: 3px;
+  border: solid 1px #ccc;
+  padding: 6px;
+  box-shadow: inset 0px 0px 1px #ccc;
+  width: 100%;
+}
+
+button {
+  border-radius: 3px;
+  border: solid 1px #ccc;
+  padding: 6px;
+  box-shadow: inset 0px 0px 1px #ccc;
+  cursor: pointer;
+}
+
+* {
+  font-family: "Helvetica";
+}
+
+fieldset {
+  border: solid 1px #666;
+  box-shadow: 0px 2px 6px 1px #ccc;
+  border-radius: 3px;
+  padding: 20px;
+  width: 40%;
+}
+
+label {
+  width: 200px;
+}
+
+input[type=text].field-error, input[type=email].field-error, input[type=number].field-error, input[type=password].field-error, select.field-error {
+  border-color: #f0005e;
+}
+input[type=text].field-success, input[type=email].field-success, input[type=number].field-success, input[type=password].field-success, select.field-success {
+  border-color: #00cc00;
+  outline: #00cc00;
+}
+
+textarea.field-error {
+  border-color: #f0005e;
+}
+
+.text-error {
+  font-size: 0.8rem;
+  color: #f0005e;
+}
+
+/* DROPDOWNS */
+#topnav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: #0055aa;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.navbar {
+  position: absolute;
+  top: -9999px;
+  transition: top 3s;
+  -webkit-transition: top 3s;
+  /* Safari */
+}
+
+.shownav {
+  top: 0px !important;
+  /* position: static !important; */
+}
+
+.navbar {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.navbar li a {
+  display: block;
+  padding: 5px 10px;
+  border-bottom: solid 1px #1a6ecc;
+  color: #fff;
+  text-decoration: none;
+}/*# sourceMappingURL=master.css.map */

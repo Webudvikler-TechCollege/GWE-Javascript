@@ -1,0 +1,70 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Functions - Form Validering</title>
+</head>
+<body>
+
+	<form>
+        <fieldset>
+            <div>
+                <label for="firstname">Fornavn</label>
+                <input type="text" name="firstname" id="firstname">
+            </div>    
+            <div>
+                <label for="lastname">Efternavn</label>
+                <input type="text" name="lastname" id="lastname">
+                <span>
+            </div>    
+            <div>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email">
+            </div>    
+            <div>
+                <button type="button" onclick="validateForm(this.form)">Send</button>
+            </div>    
+        </fieldset>    
+    </form>
+	
+	<script>
+	/**
+	 * Funktion til validering af forms
+	 * @param {object} form 
+	 */
+	function validateForm(form) {
+		//console.dir(form.firstname.value);
+
+		let result = true;
+	
+		//Hvis feltets værdi er tom...
+		if(!form.firstname.value) {
+			//Definer variabel med fejl meddelelse
+			if(!form.firstname.nextElementSibling) {
+				let msg = '<span class="text-error">Du skal udfylde feltet</span>';
+				//Indsæt msg efter det pågældende felts sluttag
+				form.firstname.insertAdjacentHTML('afterend', msg);
+			}
+			//Bryd ud af funktionen
+			result = false;
+			return false;
+		}   
+
+		//Hvis feltets værdi er tom...
+		if(!form.lastname.value) {
+			//Kalder alert boks med fejl besked
+			alert('Du skal udfylde feltet!');
+			//Bryd ud af funktionen
+			result = false;
+			return false;
+		}      
+
+		if(result) {
+			form.submit();
+		}
+	}
+
+	</script>
+</body>
+</html>
