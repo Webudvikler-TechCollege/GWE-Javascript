@@ -1,0 +1,124 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Navigation</title>
+  </head>
+  <body>
+    <header>
+      <h1>Webudvikler</h1>
+      <p class="byline">
+        Går du rundt med en drøm om at udvikle hjemmesider og webbaserede
+        løsninger for forskellige virksomheder og private? Så er
+        webudvikler-uddannelsen lige noget for dig
+      </p>
+      <p>
+        Som webudvikler lærer du at kode og programmere brugerfladen til
+        hjemmesider, apps og webbaserede løsninger. Du lærer også at planlægge,
+        styre og gennemføre produktioner i samarbejde med dine studiekammerater.
+        Kort sagt vil du lære et håndværk, som giver dig gode og rige muligheder
+        for at sikre dig et spændende job i en virksomhed herhjemme eller i
+        udlandet.
+      </p>
+    </header>
+    <hr />
+    <main>
+      <article>
+        <h2>Webudvikler - en digital håndværker</h2>
+        <p class="byline">
+          På webudvikler-uddannelsen fokuserer vi meget på kode og programmering
+          som det centrale håndværk.
+        </p>
+        <p class="gf2">
+          På grundforløbet vil du blive introduceret for de basale kodesprog som
+          HTML, CSS og JavaScript efter gældende standarder, og du vil lære de
+          grundlæggende elementer i en grafisk produktion til web.
+        </p>
+        <p>
+          På hovedforløbet dykker vi dybere ned i programmeringsfaget, hvor vi
+          bruger JavaScript og dertil relaterede værktøjer til at hente,
+          formidle og præsentere forskellige former for indhold. Du vil lære at
+          anvende webteknologier som kommunikation mellem brugerflade og
+          eksterne datakilder og de grundlæggende elementer bag en dynamisk
+          webløsning. Du vil også lære om, hvordan du bygger en App, forskellige
+          CMS-løsninger og digital handel i form af en webshop.
+        </p>
+      </article>
+      <article>
+        <h2>Webudvikler - fakta</h2>
+        <ul>
+          <li>Varighed: Maks 2 år og 3 måneder</li>
+          <li>Sted: Uddannelsen foregår på Øster Uttrup Vej 1, 9000 Aalborg</li>
+        </ul>
+        <p>
+          Det meste af undervisningen på webudvikleruddannelsen foregår foran en
+          computer på skolen, da uddannelsen er skolebaseret. Det betyder også,
+          at du ikke behøver en læreplads for at gennemføre uddannelsen.
+        </p>
+        <p>
+          Undervisningen er planlagt sådan, at der ikke er langt imellem teori
+          og praksis – det vil sige, at du får mange gode muligheder for at
+          prøve det lærte af. I faget Praktisk Webudvikling vil du komme til at
+          arbejde med virkelighedsnære opgaver, hvor løsningerne vil blive set
+          og brugt af andre elever og lærere på skolen.
+        </p>
+      </article>
+      <article>
+        <h2>Det lærer du på uddannelsen</h2>
+        <ul>
+          <li>Kodning/opsætning af hjemmesider i HTML og CSS</li>
+          <li>Programmering i JavaScript, NodeJS og React</li>
+          <li>API og Dataservices</li>
+          <li>Projekthåndtering og agile arbejdsmetoder</li>
+          <li>Problembaseret projektarbejde</li>
+          <li>Faglig fornyelse og ansvar for egen læring</li>
+        </ul>
+      </article>
+      <article>
+        <h2>Med vilje skal web udvikles</h2>
+        <p>
+          Det teknologiske fundament bag en webudviklers arbejde er mangfoldigt
+          og i konstant forandring.
+        </p>
+        <p>
+          Der kommer hele tiden nye opdateringer, metoder og teknologier, og
+          derfor skal du være indstillet på løbende at opdatere din viden og
+          færdigheder for at være trit med udviklingen.
+        </p>
+        <p>
+          En del af undervisningen vil give dig teknikker og rutiner til at
+          følge med den hastige udvikling og det hektiske arbejdsliv, der finder
+          sted i virksomhederne. Men det kræver også selvstændig vilje at blive
+          en dygtig webudvikler.
+        </p>
+      </article>
+      <article>
+        <h2>Adgangsbegrænsning og kvotepladser</h2>
+        <p>
+          Der er adgangsbegrænsning til uddannelsen som webudvikler. Det
+          betyder, at du skal søge i ekstra god tid og til en samtale, før du
+          kan blive tildelt en af kvotepladserne.
+        </p>
+        <p>
+          Kontakt vejlederen i bunden af siden for at høre mere om, hvordan du
+          søger en kvoteplads.
+        </p>
+      </article>
+    </main>
+
+    <script>
+		const paragraphs = document.getElementsByTagName('p');
+		console.log(paragraphs.length);
+
+		for(let paragraph of paragraphs) {
+			const li = document.createElement('li');
+			li.innerHTML = paragraph.innerHTML;
+			document.querySelector('.byline').appendChild(li)
+			console.log(paragraph);
+		}
+
+		
+	</script>
+  </body>
+</html>

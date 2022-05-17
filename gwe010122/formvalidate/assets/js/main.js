@@ -39,8 +39,8 @@ function validateForm(form) {
 }
 
 /**
- * Funktion til visning af fejlmeddelelse
- * @param {object} elm HTML element objekt
+ * 
+ * @param {Object} elm 
  */
 function showError(elm) {
   // Tilføjer class til input objekt (rød border)
