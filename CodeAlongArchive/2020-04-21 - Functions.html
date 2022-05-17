@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+<body>
+    <!-- Click event som attribut -->
+    <button onclick="document.body.style.backgroundColor = 'white'" type="button">White</button>
+
+    <!-- Knap aktiveres gennem event i DOM -->
+    <button type="button" id="red">Rød</button>
+
+
+    <button type="button" onclick="setColor('pink')">Pink</button>
+    <button type="button" onclick="setColor('green')">Grøn</button>
+    <button type="button" onclick="setColor('brown')">Brun</button>
+
+    <script>
+        document.getElementById('red').onclick = function() {
+            document.body.style.backgroundColor = 'red';
+        }
+
+        function setColor(color) {
+            document.body.style.backgroundColor = color;
+        }
+    </script>
+</body>
+</html>

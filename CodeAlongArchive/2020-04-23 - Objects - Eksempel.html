@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects & Arrays</title>
+    <style>
+        img {
+            max-width: 40%; 
+        }
+    </style>
+</head>
+<body>
+    <div id="gallery">
+
+    </div>
+
+    <script>
+
+        /**
+         * Definerer et array til billedsamling
+         * Hvert index er associeret med et objekt med det enkelte billedes egenskaber 
+         */ 
+        let arrImages = [
+            { image: "landscape-1.jpg", title: "Landskab", author: "Jens Jensen" },
+            { image: "landscape-2.jpg", title: "Eng med marker", author: "Jens Jensen" },
+            { image: "landscape-3.jpg", title: "Eng med flere marker", author: "Hans Jensen" },
+            { image: "landscape-4.jpg", title: "Flot landskab", author: "Jens Jensen" },
+            { image: "aband-places-1.jpg", title: "Forladt sted", author: "Jens Jensen" }
+        ];
+
+        console.log(arrImages[1].title);
+
+        // Deklarerer variabler
+        let accHtml = "", element;
+
+        // Looper arrayet med et for/of loop og genererer output med html og data fra objektet
+        for(element of arrImages) {
+            accHtml += `<img src="../assets/images/slider/${element.image}" title="${element.title} - Foto: ${element.author}">\n`;
+        }
+
+        // Indsætter akkumuleret html i DOM element #gallery
+        document.getElementById('gallery').innerHTML = accHtml;
+
+        // Skriver til konsollen
+        //console.log(accHtml);
+        //console.log(arrImages);
+        //console.log(arrImages[0].image);
+    </script>
+</body>
+</html>

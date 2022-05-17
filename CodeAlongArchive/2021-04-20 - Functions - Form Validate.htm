@@ -1,0 +1,99 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions - Form Validering</title>
+    <style>
+        span {
+            margin: 10px 0px;
+            color: red;
+
+        }
+
+        .error {
+            margin-right: 10px;
+            border: solid 1px #f00;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <fieldset>
+            <legend>Tilmeld nyhedsbrev</legend>
+            <div>
+                <label for="name">Navn:</label>
+                <input type="text" name="fullname" id="fullname">
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="text" name="email" id="email">
+            </div>
+            <div>
+                <div id="messagewrapper"></div>
+                <button type="button" onClick="formValidate(this.form)">Tilmeld</button>
+            </div>
+        </fieldset>
+    </form>
+
+    <script>
+        function formValidate(form) {
+            const messageWrapper = document.getElementById('messagewrapper');
+            let status = true;
+
+            if (!form.fullname.value) {
+                //messageWrapper.innerText = 'Du skal udfylde feltet navn';
+                form.fullname.classList.add('error');
+                form.fullname.insertAdjacentHTML("afterbegin", `<span>Du skal udfylde feltet navn</span>`);
+                status = false;
+                return false;
+            } else if (!isValidAlpha(form.fullname.value)) {
+                messageWrapper.innerText = 'Du har ikke indtastet et gyldigt navn.';
+                status = false;
+                return false;
+            }
+
+            if (!form.email.value) {
+                messageWrapper.innerText = 'Du skal udfylde feltet email';
+                status = false;
+                return false;
+            } else if (!isValidEmail(form.email.value)) {
+                messageWrapper.innerText = 'Du har ikke indtastet en gyldig email!';
+                status = false;
+                return false;
+            }
+
+            if (status) {
+                messageWrapper.innerText = "Formularen kan sendes";
+            }
+        }
+
+        //Tjekker om værdi er et nummer
+        function isValidNumber(value) {
+            let pattern = /^[0-9]+$/;
+            return pattern.test(value);
+        }
+
+        //Tjekker om værdi er alfabet
+        function isValidAlpha(value) {
+            let pattern = /^[A-ZÆØÅa-zæøå ]+$/;
+            return pattern.test(value);
+        }
+
+        //Tjekker om værdi har en gyldig email syntaks
+        function isValidEmail(value) {
+            let pattern = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+            return pattern.test(value);
+        }
+
+        //Tjekker at værdi har en gyldig længde
+        function isValidLength(value, min, max) {
+            let pattern = RegExp('^[0-9A-Za-z@#$%]{' + min + ',' + max + '}$');
+            return pattern.test(value);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opgave 6</title>
+</head>
+
+<body>
+    <form>
+        <fieldset>
+            <legend>Tilmeld nyhedsbrev</legend>
+            <div>
+                <label for="name">Navn:</label>
+                <input type="text" name="fullname" id="fullname">
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="text" name="email" id="email">
+            </div>
+            <div>
+                <p id="error-wrapper" style="color: red"></p>
+                <button type="button" id="submit2newsletter">Tilmeld</button>
+            </div>
+        </fieldset>
+    </form>
+
+    <script>
+        const btn = document.querySelector('#submit2newsletter');
+
+        btn.onclick = function () {
+            let result = true;
+
+            const inputElements = document.querySelectorAll('input');
+            const errorWrapper = document.querySelector('#error-wrapper');
+
+            for (let element of inputElements) {
+                if (!element.value) {
+                    if (element.name === "fullname") {
+                        errorWrapper.innerHTML = 'Du skal udfylde feltet navn';
+                    }
+                    if (element.name === "email") {
+                        errorWrapper.innerHTML = 'Du skal udfylde feltet email';
+                    }
+                    result = false;
+                    return false;
+                }
+            }
+
+            if (result) {
+                errorWrapper.innerHTML = 'Din formular er sendt';
+            }
+        }
+    </script>
+</body>
+
+</html>

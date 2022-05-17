@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <ul>
+        <li id="person1" class="list-item">Bo</li>
+        <li id="person2" class="list-item2">Ulla</li>
+        <li id="person3" class="list-item">Jens</li>
+        <li id="person4" class="list-item2">Per</li>
+        <li id="person5" class="list-item">Pia</li>
+        <li id="person6" class="list-item2">Mette</li>
+        <li id="person7" class="list-item">Thomas</li>
+        <li id="person8" class="list-item2">Tim</li>
+        <li id="person9" class="list-item">Jette</li>
+        <li id="person10" class="list-item2">Lars</li>
+    </ul>
+
+    <script>
+        // HTML COLLECTION
+        let listbytagname = document.getElementsByTagName('li');
+        let listbyclassname = document.getElementsByClassName('list-item2');
+        let querybyclassname = document.querySelectorAll('.list-item2');
+
+        // Udskrift af de tre listetyper
+        console.log(`ByTagName: ${listbytagname}`);
+        console.log(`ByClassName: ${listbyclassname}`);
+        console.log(`QueryByClassName: ${querybyclassname}`);
+
+        console.log("Klassisk for loop:");
+        // For loop på HTMLCollection - By Tag & Class Name
+        for(let i = 0; i < listbytagname.length; i++) {
+            console.log(listbytagname[i]);
+        }       
+
+        // *** For loop på NodeList. accHtml står for accummulated HTML 
+        let item, accHtml = "";
+
+        for(item of querybyclassname) {
+            console.log("For/of loop med html output:");
+            accHtml += `<p>${item.innerHTML}</p>`;
+        }
+        console.log(accHtml);
+
+        // Virker kun på NodeLists
+        querybyclassname.forEach(function(value, key) {
+            console.log("Foreach loop output:");
+            console.log(value);
+        });
+
+    </script>
+</body>
+</html>

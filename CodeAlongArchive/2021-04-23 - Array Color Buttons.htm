@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #colorwrapper {
+            border: solid 1px #000;
+            width: 300px;
+            height: 200px;
+        }
+
+        .red { background-color: red; }
+        .green { background-color: green; }
+        .purple { background-color: purple; }
+        .yellow { background-color: yellow; }
+        .blue { background-color: blue; }
+
+    </style>
+</head>
+
+<body>
+    <div id="buttonPanel"></div>
+
+    <div id="colorwrapper"></div>
+
+    <script>
+        const colorwrapper = document.getElementById('colorwrapper');
+
+        console.dir(document.body.children[0]);
+
+        const arrColors = [
+            ['red', 'Rød'], 
+            ['yellow', 'Gul'], 
+            ['blue', 'Blå'], 
+            ['green', 'Grøn'], 
+            ['purple', 'Lilla']
+        ];
+        //console.table(arrColors);
+
+        let accButtonHtml = '';
+
+        for (let arrColor of arrColors) {
+            accButtonHtml += `<button id="${arrColor[0]}" name="${arrColor[0]}">${arrColor[1]}</button>\n`;
+        }
+
+        document.getElementById('buttonPanel').innerHTML = accButtonHtml;
+
+        const arrButtons = document.querySelectorAll('button');
+        //console.log(arrButtons);
+
+        for(let button of arrButtons) {
+            button.onclick = function() {
+                colorwrapper.classList.remove(...colorwrapper.classList);
+                colorwrapper.classList.add(this.name);
+                //console.log(colorwrapper.classList.contains('red'));
+            }
+        }
+
+    </script>
+</body>
+
+</html>

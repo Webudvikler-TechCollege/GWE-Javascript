@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onclick="doThis()">
+    
+    <label for="zipcode">Postnummer:</label>
+    <input type="text" name="zipcode" id="zipcode" value="9000">
+    <button id="send">Send felt</button>
+
+    <div id="presenter"></div>
+
+    <script>        
+
+        console.dir(document.getElementById('send').innerText);
+
+
+        document.getElementById("send").onclick = function() {
+
+            let inputValue = document.getElementById("zipcode").value;
+            document.getElementById("presenter").innerHTML = inputValue;
+
+        }
+
+        // Array / Object Session fra fredagsmøde med kun 6 fremmødte :(
+        // De fik så en god gang array juice :D
+
+        let arrSimple = [
+            { name: "Bo", city: "Aalborg", zipcode: 9000 },
+            { name: "Jens", city: "Nibe", zipcode: 9240 },
+            { name: "Sune", city: "Hune", zipcode: 9492 }
+        ];
+
+        //console.log(arrSimple);
+
+
+
+</script>
+
+</body>
+</html>
