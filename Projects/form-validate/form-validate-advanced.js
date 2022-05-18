@@ -1,4 +1,4 @@
-/**
+X/**
  * Funktion til form validering - med argument og loop
  * Form sendes som objekt til funktionen og herfra trækkes input elementer ud
  * efter attributten required. Disse loopes igennem og der meldes fejl hvis de ikke har
