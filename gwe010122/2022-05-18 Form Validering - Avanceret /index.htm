@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Functions - Form Validering</title>
+	<link rel="stylesheet" href="./assets/css/master.css">
+	<script src="./assets/js/main.js" defer></script>
+</head>
+<body>
+
+	<form>
+        <fieldset>
+            <div>
+                <label for="firstname">Fornavn</label>
+                <input type="text" name="firstname" id="firstname" required data-validate="onlyalpha"></input>
+            </div>    
+            <div>
+                <label for="lastname">Efternavn</label>
+                <input type="text" name="lastname" id="lastname" required>
+            </div>    
+            <div>
+                <label for="lastname">Kaldenavn</label>
+                <input type="text" name="nickname" id="nickname">
+            </div>    
+            <div>
+                <label for="lastname">Postnummer</label>
+                <input type="text" name="zipcode" id="zipcode" data-validate="onlynum" required>
+            </div>    
+            <div>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" data-validate="isemail" required> 
+            </div>
+            <div>
+                <label for="gender">Køn</label>
+                <select name="gender" id="gender" required>
+                    <option value="">...</option>
+                    <option value="f">Kvinde</option>
+                    <option value="m">Mand</option>
+                </select>
+            </div>    
+            <div>
+                <label for="accept">Accepterer du?</label>
+                <input type="checkbox" id="accept" name="accept" value="" data-message="Du skal acceptere vores betingelser" required />
+            </div>    
+            <div>
+                <button type="button" onclick="validateForm(this.form)">Send</button>
+                <button type="reset">Nulstil felter</button>
+            </div>    
+        </fieldset>    
+    </form>
+</body>
+</html>

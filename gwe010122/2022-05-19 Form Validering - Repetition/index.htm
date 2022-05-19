@@ -13,25 +13,29 @@
         <fieldset>
             <div>
                 <label for="firstname">Fornavn</label>
-                <input type="text" name="firstname" id="firstname" required data-validate="onlyalpha"></input>
+                <input type="text" name="firstname" id="firstname"></input>
             </div>    
             <div>
-                <label for="lastname">Efternavn</label>
-                <input type="text" name="lastname" id="lastname" required>
-            </div>    
-            <div>
-                <label for="lastname">Kaldenavn</label>
-                <input type="text" name="nickname" id="nickname">
-            </div>    
-            <div>
-                <label for="lastname">POstnummer</label>
-                <input type="text" name="zipcode" id="zipcode" required data-validate="onlynum">
+                <label for="zipcode">Postnummer</label>
+                <input type="number" name="zipcode" id="zipcode">
             </div>    
             <div>
                 <label for="email">Email</label>
-                <input type="email" name="email" id="email" required data-validate="isemail"> 
+                <input type="email" name="email" id="email"> 
             </div>    
             <div>
+                <label for="gender">Køn</label>
+                <select name="gender" id="gender">
+                    <option value="">Vælg køn</option>
+                    <option value="f">Kvinde</option>
+                    <option value="m">Mand</option>
+                </select>
+            </div>    
+            <div>
+                <label for="accept">Accepter vores betingelser</label>
+                <input type="checkbox" name="accept" id="accept" value="">
+            </div>    
+            <div id="buttonpanel">
                 <button type="button" onclick="validateForm(this.form)">Send</button>
                 <button type="reset">Nulstil felter</button>
             </div>    

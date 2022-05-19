@@ -2,8 +2,10 @@ function validateForm(form) {
   let result = true;
 
   let arrRequired = form.querySelectorAll(':required');
+  console.log(arrRequired);
 
   for(let field of arrRequired) {
+
     if(!field.value) {
       showError(field, 'Du skal udfylde feltet')
       result = false;
