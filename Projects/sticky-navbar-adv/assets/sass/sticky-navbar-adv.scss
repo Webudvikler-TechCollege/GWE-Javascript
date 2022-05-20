@@ -6,7 +6,7 @@ $linkcolor: #f2f2f2;
     font-family: $font;
     font-size: $size;
     color: $color;
-}
+} 
 
 @mixin transition($property) {
     -webkit-transition: $property;
