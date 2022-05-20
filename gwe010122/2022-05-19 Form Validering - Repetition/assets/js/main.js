@@ -66,6 +66,7 @@ function showError(objInput, strMessage) {
             removeError(objInput)
           };          
           break;
+      case 'NUMBER':
       case 'SELECT-ONE':
       case 'CHECKBOX':
           objInput.onchange = function () {
