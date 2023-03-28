@@ -54,8 +54,7 @@ textarea.field-error {
   position: absolute;
   top: -9999px;
   transition: top 3s;
-  -webkit-transition: top 3s;
-  /* Safari */
+  -webkit-transition: top 3s; /* Safari */
 }
 
 .shownav {
