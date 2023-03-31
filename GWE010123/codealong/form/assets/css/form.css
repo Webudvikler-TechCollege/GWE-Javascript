@@ -1,0 +1,49 @@
+* {
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+	--error-color: #c00;
+	--success-color: #0c0;
+}
+
+div {
+	margin: 0.5rem 0;
+}
+
+fieldset {
+	border: solid 1px #ccc;
+	padding: 1rem;
+	width: 35rem;
+}
+
+label {
+	display: block;
+}
+
+input {
+	border-radius: 3px;
+	border: solid 1px #ccc;
+	padding: 0.5rem;
+	width: 80%;
+}
+
+button {
+	border: solid 1px #ccc;
+	cursor: pointer;
+	padding: 1rem;
+}
+
+.field-error {
+	border-color: var(--error-color);
+}
+
+.text-error {
+	font-size: 0.8rem;
+	color: var(--error-color);
+	display: block;
+}
+
+.field-success {
+	border-color: var(--success-color);
+}

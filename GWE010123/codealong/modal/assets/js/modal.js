@@ -1,17 +1,17 @@
 const modal = document.getElementById('modal');
-const openModalButton = document.querySelector('#openModal');
-const closeModalButton = document.querySelector('#closeModal');
+const openModal = document.querySelector('#openModal');
+const closeModal = document.querySelector('#closeModal');
 
-openModalButton.addEventListener('click', function() {
+openModal.addEventListener('click', function() {
 	modal.classList.replace('hide', 'show')
 })
 
-closeModalButton.addEventListener('click', function() {
+closeModal.addEventListener('click', function() {
 	modal.classList.replace('show', 'hide')
 })
 
-window.addEventListener('click', function(e) {
-	if(e.target.id === 'modal') {
+window.addEventListener('click', (event) => {
+	if(event.target.id === "modal") {
 		modal.classList.replace('show', 'hide')
 	}
 })

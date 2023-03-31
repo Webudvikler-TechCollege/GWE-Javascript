@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./assets/css/form.css">
+	<script src="./assets/js/form.js"></script>
+	<title>Form Validering</title>
+</head>
+<body>
+	<form>
+		<fieldset>
+			<div>
+				<label for="firstname">Fornavn</label>
+				<input type="text" name="firstname" id="firstname" />
+			</div>
+			<div>
+				<label for="lastname">Efternavn</label>
+				<input type="text" name="lastname" id="lastname" />
+			</div>
+			<div>
+				<label for="email">Email</label>
+				<input type="email" name="email" id="email" />
+			</div>
+			<div>
+				<button type="button" onclick="validateForm(this.form)">Send</button>
+				<button type="reset">Nulstil felter</button>
+			</div>
+		</fieldset>
+	</form>
+</body>
+</html>
