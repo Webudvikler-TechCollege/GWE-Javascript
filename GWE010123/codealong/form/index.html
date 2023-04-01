@@ -14,6 +14,7 @@
 			<div>
 				<label for="firstname">Fornavn</label>
 				<input type="text" name="firstname" id="firstname" />
+			
 			</div>
 			<div>
 				<label for="lastname">Efternavn</label>
@@ -24,6 +25,15 @@
 				<input type="email" name="email" id="email" />
 			</div>
 			<div>
+				<!-- 
+					Knap med onclick event som peger på js funktionen validateForm
+					Funktionen kaldes når der klikkes på knappen og skal derfor være 
+					tilgængelig via en script reference til js fil for at virke.
+					Funktionen kaldes med this.form som paramter.
+					this refererer til den knap der klikkes på og this.form 
+					refererer til det form tag som denne knap ligger i. 
+					Dermed sendes hele formularen med over i javascript funktionen.
+				-->
 				<button type="button" onclick="validateForm(this.form)">Send</button>
 				<button type="reset">Nulstil felter</button>
 			</div>
